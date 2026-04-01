@@ -100,23 +100,3 @@ export default function Page() {
     </main>
   );
 }
-
-      {/* FLOAT BUTTON */}
-      <a
-        href="https://wa.me/62XXXXXXXXXX"
-        style={{
-          position: "fixed",
-          bottom: "20px",
-          right: "20px",
-          background: "#22c55e",
-          padding: "12px 18px",
-          borderRadius: "999px",
-          color: "#fff",
-          textDecoration: "none"
-        }}
-      >
-        WhatsApp
-      </a>
-    </main>
-  );
-}
