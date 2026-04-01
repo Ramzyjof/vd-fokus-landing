@@ -1,10 +1,10 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Problem from "./components/Problem";
-import Authority from "./components/Authority";
-import Services from "./components/Services";
-import Pricing from "./components/Pricing";
-import { CTA, Footer } from "./components/CTA";
+import Header from "./Components/Header";
+import Hero from "./Components/Hero";
+import Problem from "./Components/Problem";
+import Authority from "./Components/Authority";
+import Services from "./Components/Services";
+import Pricing from "./Components/Pricing";
+import { CTA, Footer } from "./Components/CTA";
 
 export default function Page() {
   return (
