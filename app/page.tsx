@@ -17,6 +17,13 @@ export default function Page() {
       <Pricing />
       <CTA />
       <Footer />
+
+      <a
+        href="https://wa.me/6281212940797"
+        className="fixed bottom-5 right-5 bg-green-500 text-white px-4 py-2 rounded-full"
+      >
+        WhatsApp
+      </a>
     </>
   );
 }
