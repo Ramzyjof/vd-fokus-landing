@@ -24,18 +24,17 @@ export default function Page() {
       title: "Why VD Fokus?",
       icon: <UserCheck size={18} />,
       items: [
-        "Executive Search background",
+        "20+ years of Executive Search background",
         "Direct hiring manager insights",
-        "Proven candidate improvements"
+        
       ]
     },
     {
-      title: "Our Services",
+      title: "Our Package",
       icon: <Briefcase size={18} />,
       items: [
         "CV Optimization",
-        "Interview Coaching",
-        "LinkedIn Upgrade"
+        "Interview Preparation",
       ]
     }
   ];
