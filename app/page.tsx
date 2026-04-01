@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { FileText, Briefcase, UserCheck } from "lucide-react";
 
 export default function Page() {
@@ -51,9 +52,14 @@ export default function Page() {
       }}
     >
       {/* NAVBAR */}
-      <div style={{ padding: "24px 40px" }}>
-        <img src="/logo.png" alt="VD Fokus" style={{ height: "36px" }} />
-      </div>
+      <div style={{ padding: "24px 40px", display: "flex", alignItems: "center" }}>
+  <Image 
+    src="/logo.png" 
+    alt="VD Fokus" 
+    width={120} 
+    height={40}
+  />
+</div>
 
       {/* HERO */}
       <section
