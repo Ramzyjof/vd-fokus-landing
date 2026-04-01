@@ -64,11 +64,11 @@ export default function Page() {
         }}
       >
         <h1 style={{ fontSize: "42px", fontWeight: 500, letterSpacing: "-0.5px" }}>
-          Land Interviews Faster
+          "Get Hired Faster with CV & Interview Prepaaration from Executive Recruiters"
         </h1>
 
         <p style={{ marginTop: "16px", color: "#94a3b8", fontSize: "18px" }}>
-          CV & interview coaching from real executive recruiters
+          "We help professionals pass HR screening and interviews using real hiring insights."
         </p>
       </section>
 
