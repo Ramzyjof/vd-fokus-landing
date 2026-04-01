@@ -1,14 +1,52 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function Page() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    setVisible(true);
+  }, []);
+
   return (
-    <main style={{ fontFamily: "Arial", background: "#f9fafb", color: "#111" }}>
+    <main
+      style={{
+        fontFamily: "Arial",
+        background: "linear-gradient(135deg, #0f172a, #1e293b)",
+        color: "#fff",
+        minHeight: "100vh"
+      }}
+    >
+      {/* NAVBAR */}
+      <div style={{
+        display: "flex",
+        justifyContent: "space-between",
+        padding: "20px 40px",
+        alignItems: "center"
+      }}>
+        <img src="/logo.png" alt="VD Fokus" style={{ height: "40px" }} />
+        <a href="https://wa.me/62XXXXXXXXXX" style={{ color: "#fff" }}>
+          Contact
+        </a>
+      </div>
 
       {/* HERO */}
-      <section style={{ textAlign: "center", padding: "80px 20px" }}>
-        <h1 style={{ fontSize: "38px", fontWeight: "bold" }}>
-          Land Interviews Faster with CV & Coaching from Executive Recruiters
+      <section
+        style={{
+          textAlign: "center",
+          padding: "80px 20px",
+          opacity: visible ? 1 : 0,
+          transform: visible ? "translateY(0)" : "translateY(20px)",
+          transition: "all 0.8s ease"
+        }}
+      >
+        <h1 style={{ fontSize: "40px", fontWeight: "bold" }}>
+          Land Interviews Faster with CV & Coaching
         </h1>
-        <p style={{ marginTop: "20px", fontSize: "18px", color: "#555" }}>
-          Real recruiter insights to help you pass HR screening & interviews.
+
+        <p style={{ marginTop: "20px", color: "#cbd5f5" }}>
+          Get real recruiter insights to pass HR screening & interviews.
         </p>
 
         <a
@@ -17,9 +55,9 @@ export default function Page() {
             marginTop: "30px",
             display: "inline-block",
             padding: "14px 28px",
-            background: "#111",
+            background: "#22c55e",
             color: "#fff",
-            borderRadius: "10px",
+            borderRadius: "999px",
             textDecoration: "none",
             fontWeight: "bold"
           }}
@@ -31,122 +69,112 @@ export default function Page() {
       {/* CONTENT */}
       <div style={{ maxWidth: "900px", margin: "auto", padding: "20px" }}>
 
-        {/* PROBLEM */}
-        <section style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "26px" }}>Why You’re Not Getting Interviews</h2>
-          <ul style={{ lineHeight: "1.8", marginTop: "10px" }}>
-            <li>CV not optimized for HR screening</li>
-            <li>Weak positioning of experience</li>
-            <li>Unstructured interview answers</li>
-          </ul>
-        </section>
+        {/* CARD STYLE SECTION */}
+        {[
+          {
+            title: "Why You’re Not Getting Interviews",
+            items: [
+              "CV not optimized for HR screening",
+              "Weak positioning of experience",
+              "Unstructured interview answers"
+            ]
+          },
+          {
+            title: "Why VD Fokus?",
+            items: [
+              "Executive Search background",
+              "Direct hiring manager insights",
+              "Proven candidate improvements"
+            ]
+          },
+          {
+            title: "Our Services",
+            items: [
+              "CV Optimization",
+              "Interview Coaching",
+              "LinkedIn Upgrade"
+            ]
+          }
+        ].map((section, index) => (
+          <div
+            key={index}
+            style={{
+              background: "rgba(255,255,255,0.05)",
+              padding: "20px",
+              borderRadius: "12px",
+              marginBottom: "20px",
+              backdropFilter: "blur(10px)",
+              transition: "transform 0.3s",
+            }}
+          >
+            <h2>{section.title}</h2>
+            <ul>
+              {section.items.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
 
-        {/* AUTHORITY */}
-        <section style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "26px" }}>Why VD Fokus?</h2>
-          <ul style={{ lineHeight: "1.8", marginTop: "10px" }}>
-            <li>Executive Search background</li>
-            <li>Direct hiring manager insights</li>
-            <li>Proven candidate improvement results</li>
-          </ul>
-        </section>
-
-        {/* SERVICES */}
-        <section style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "26px" }}>Our Services</h2>
-          <ul style={{ lineHeight: "1.8", marginTop: "10px" }}>
-            <li>CV Optimization</li>
-            <li>Interview Coaching</li>
-            <li>LinkedIn Profile Upgrade</li>
-          </ul>
-        </section>
-
-        {/* PRICING (CARDS) */}
-        <section style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "26px", textAlign: "center" }}>Pricing</h2>
+        {/* PRICING */}
+        <div style={{ marginTop: "40px" }}>
+          <h2>Pricing</h2>
 
           <div style={{
             display: "grid",
             gap: "20px",
             marginTop: "20px"
           }}>
-
-            <div style={{ padding: "20px", background: "#fff", borderRadius: "10px", boxShadow: "0 2px 10px rgba(0,0,0,0.05)" }}>
-              <h3>CV Review</h3>
-              <p>IDR 299K</p>
-            </div>
-
-            <div style={{ padding: "20px", background: "#fff", borderRadius: "10px", boxShadow: "0 2px 10px rgba(0,0,0,0.05)" }}>
-              <h3>Interview Coaching</h3>
-              <p>IDR 499K</p>
-            </div>
-
-            <div style={{ padding: "20px", background: "#fff", borderRadius: "10px", boxShadow: "0 2px 10px rgba(0,0,0,0.05)" }}>
-              <h3>Bundle Package</h3>
-              <p>IDR 699K</p>
-            </div>
-
+            {[
+              { name: "CV Review", price: "IDR 299K" },
+              { name: "Interview Coaching", price: "IDR 499K" },
+              { name: "Bundle Package", price: "IDR 699K" }
+            ].map((p, i) => (
+              <div key={i} style={{
+                padding: "20px",
+                background: "#111827",
+                borderRadius: "12px"
+              }}>
+                <h3>{p.name}</h3>
+                <p>{p.price}</p>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
 
-        {/* TESTIMONIAL */}
-        <section style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "26px" }}>Client Results</h2>
-
-          <div style={{
-            background: "#fff",
-            padding: "20px",
-            borderRadius: "10px",
-            marginTop: "15px",
-            boxShadow: "0 2px 10px rgba(0,0,0,0.05)"
-          }}>
-            <p>
-              “After improving my CV, I finally got interview calls within 2 weeks.”
-            </p>
-            <strong>- Candidate, Jakarta</strong>
-          </div>
-        </section>
-
-        {/* FINAL CTA */}
-        <section style={{ textAlign: "center", marginBottom: "80px" }}>
-          <h2>Ready to Get Hired?</h2>
+        {/* CTA */}
+        <div style={{ textAlign: "center", marginTop: "60px" }}>
           <a
             href="https://wa.me/62XXXXXXXXXX"
             style={{
-              marginTop: "20px",
-              display: "inline-block",
               padding: "14px 28px",
-              background: "green",
+              background: "#22c55e",
+              borderRadius: "999px",
               color: "#fff",
-              borderRadius: "10px",
-              textDecoration: "none",
-              fontWeight: "bold"
+              textDecoration: "none"
             }}
           >
-            Book Now via WhatsApp
+            Book Now
           </a>
-        </section>
-
+        </div>
       </div>
 
-      {/* FLOATING WHATSAPP BUTTON */}
+      {/* FLOAT BUTTON */}
       <a
         href="https://wa.me/62XXXXXXXXXX"
         style={{
           position: "fixed",
           bottom: "20px",
           right: "20px",
-          background: "green",
+          background: "#22c55e",
+          padding: "12px 18px",
+          borderRadius: "999px",
           color: "#fff",
-          padding: "12px 16px",
-          borderRadius: "50px",
-          textDecoration: "none",
-          fontWeight: "bold"
+          textDecoration: "none"
         }}
       >
         WhatsApp
       </a>
-
     </main>
   );
 }
