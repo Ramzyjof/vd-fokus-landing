@@ -12,12 +12,12 @@ export default function Page() {
 
   const sections = [
     {
-      title: "Why You’re Not Getting Interviews",
+      title: "Why You're keep failing on Interview",
       icon: <FileText size={18} />,
       items: [
-        "CV not optimized for HR screening",
-        "Weak positioning of experience",
-        "Unstructured interview answers"
+        "You may have had no interview preparation, or bad interview advice.",
+        "You did not do some in-person interview practicee",
+        "You did not maintain appropriate body language throughout the interview."
       ]
     },
     {
@@ -35,6 +35,8 @@ export default function Page() {
       items: [
         "CV Optimization",
         "Interview Preparation",
+        "Mock Interview"
+        
       ]
     }
   ];
@@ -64,7 +66,7 @@ export default function Page() {
         }}
       >
         <h1 style={{ fontSize: "42px", fontWeight: 500, letterSpacing: "-0.5px" }}>
-          "Get Hired Faster with CV & Interview Prepaaration from Executive Recruiters"
+          Get Hired Faster 
         </h1>
 
         <p style={{ marginTop: "16px", color: "#94a3b8", fontSize: "18px" }}>
@@ -112,7 +114,7 @@ export default function Page() {
       {/* CTA */}
       <div style={{ textAlign: "center", margin: "80px 0" }}>
         <a
-          href="https://wa.me/62XXXXXXXXXX"
+          href="https://wa.me/6281212940797"
           style={{
             padding: "14px 32px",
             borderRadius: "999px",
