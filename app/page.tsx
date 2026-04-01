@@ -1,75 +1,45 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 export default function Page() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    setVisible(true);
-  }, []);
-
   return (
     <main
       style={{
-        fontFamily: "Arial",
+        fontFamily: "'Segoe UI', Arial",
         background: "linear-gradient(135deg, #0f172a, #1e293b)",
         color: "#fff",
         minHeight: "100vh"
       }}
     >
       {/* NAVBAR */}
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "20px 40px",
-        alignItems: "center"
-      }}>
-        <img src="/logo.png" alt="VD Fokus" style={{ height: "40px" }} />
-        <a href="https://wa.me/62XXXXXXXXXX" style={{ color: "#fff" }}>
-          Contact
-        </a>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          padding: "20px 40px"
+        }}
+      >
+        <img src="/logo.png" alt="VD Fokus" style={{ height: "42px" }} />
       </div>
 
       {/* HERO */}
-      <section
-        style={{
-          textAlign: "center",
-          padding: "80px 20px",
-          opacity: visible ? 1 : 0,
-          transform: visible ? "translateY(0)" : "translateY(20px)",
-          transition: "all 0.8s ease"
-        }}
-      >
-        <h1 style={{ fontSize: "40px", fontWeight: "bold" }}>
+      <section style={{ textAlign: "center", padding: "40px 20px" }}>
+        <h1 style={{ fontSize: "34px", fontWeight: "700" }}>
           Land Interviews Faster with CV & Coaching
         </h1>
-
-        <p style={{ marginTop: "20px", color: "#cbd5f5" }}>
-          Get real recruiter insights to pass HR screening & interviews.
+        <p style={{ marginTop: "12px", color: "#cbd5e1" }}>
+          Real recruiter insights to help you pass HR screening.
         </p>
-
-        <a
-          href="https://wa.me/62XXXXXXXXXX"
-          style={{
-            marginTop: "30px",
-            display: "inline-block",
-            padding: "14px 28px",
-            background: "#22c55e",
-            color: "#fff",
-            borderRadius: "999px",
-            textDecoration: "none",
-            fontWeight: "bold"
-          }}
-        >
-          Chat via WhatsApp
-        </a>
       </section>
 
       {/* CONTENT */}
-      <div style={{ maxWidth: "900px", margin: "auto", padding: "20px" }}>
-
-        {/* CARD STYLE SECTION */}
+      <div
+        style={{
+          maxWidth: "900px",
+          margin: "auto",
+          padding: "20px"
+        }}
+      >
+        {/* SECTION COMPONENT */}
         {[
           {
             title: "Why You’re Not Getting Interviews",
@@ -99,65 +69,37 @@ export default function Page() {
           <div
             key={index}
             style={{
-              background: "rgba(255,255,255,0.05)",
-              padding: "20px",
-              borderRadius: "12px",
-              marginBottom: "20px",
-              backdropFilter: "blur(10px)",
-              transition: "transform 0.3s",
+              background: "rgba(255,255,255,0.06)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              padding: "24px",
+              borderRadius: "14px",
+              marginBottom: "24px",
+              backdropFilter: "blur(8px)"
             }}
           >
-            <h2>{section.title}</h2>
-            <ul>
+            <h2
+              style={{
+                fontSize: "20px",
+                fontWeight: "600",
+                marginBottom: "12px"
+              }}
+            >
+              {section.title}
+            </h2>
+
+            <ul style={{ paddingLeft: "18px", lineHeight: "1.9", color: "#e2e8f0" }}>
               {section.items.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li key={i} style={{ marginBottom: "6px" }}>
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
         ))}
-
-        {/* PRICING */}
-        <div style={{ marginTop: "40px" }}>
-          <h2>Pricing</h2>
-
-          <div style={{
-            display: "grid",
-            gap: "20px",
-            marginTop: "20px"
-          }}>
-            {[
-              { name: "CV Review", price: "IDR 299K" },
-              { name: "Interview Coaching", price: "IDR 499K" },
-              { name: "Bundle Package", price: "IDR 699K" }
-            ].map((p, i) => (
-              <div key={i} style={{
-                padding: "20px",
-                background: "#111827",
-                borderRadius: "12px"
-              }}>
-                <h3>{p.name}</h3>
-                <p>{p.price}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div style={{ textAlign: "center", marginTop: "60px" }}>
-          <a
-            href="https://wa.me/62XXXXXXXXXX"
-            style={{
-              padding: "14px 28px",
-              background: "#22c55e",
-              borderRadius: "999px",
-              color: "#fff",
-              textDecoration: "none"
-            }}
-          >
-            Book Now
-          </a>
-        </div>
       </div>
+    </main>
+  );
+}
 
       {/* FLOAT BUTTON */}
       <a
