@@ -1,29 +1,20 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Problem from "./components/Problem";
-
-import Services from "./components/Services";
-import Pricing from "./components/Pricing";
-import CTA from "./components/CTA";
-
-export default function Page() {
+export default function Home() {
   return (
-    <>
-      <Header />
-      <Hero />
-      <Problem />
-   
-      <Services />
-      <Pricing />
-      <CTA />
-      
+    <main style={{ padding: "40px", fontFamily: "Arial" }}>
+      <h1>VD Fokus</h1>
+      <p>Executive CV & Interview Preparation</p>
 
-      <a
-        href="https://wa.me/6281212940797"
-        className="fixed bottom-5 right-5 bg-green-500 text-white px-4 py-2 rounded-full"
-      >
-        WhatsApp
+      <h2>Our Services</h2>
+      <ul>
+        <li>CV Optimization</li>
+        <li>Interview Coaching</li>
+        <li>LinkedIn Profile Upgrade</li>
+      </ul>
+
+      <h2>Get Started</h2>
+      <a href="https://wa.me/6281234567890">
+        Contact via WhatsApp
       </a>
-    </>
+    </main>
   );
 }
