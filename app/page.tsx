@@ -45,7 +45,7 @@ export default function Page() {
     <main
       style={{
         fontFamily: "Inter, sans-serif",
-        background: "#0f172a",
+        background: "radial-gradient(circle at top, #1e293b, #0f172a)",
         color: "#fff",
         minHeight: "100vh"
       }}
@@ -73,9 +73,15 @@ export default function Page() {
           "We help professionals pass HR screening and interviews using real hiring insights."
         </p>
       </section>
-
+<div
+  style={{
+    width: "60%",
+    margin: "0 auto 40px",
+    borderTop: "1px solid rgba(255,255,255,0.1)"
+  }}
+/>
       {/* CONTENT */}
-      <div style={{ maxWidth: "800px", margin: "auto", padding: "20px" }}>
+      <div style={{ maxWidth: "800px", margin: "auto", padding: "40px 20px" }}>
         {sections.map((section, index) => (
           <div
             key={index}
@@ -116,14 +122,15 @@ export default function Page() {
         <a
           href="https://wa.me/6281212940797"
           style={{
-            padding: "14px 32px",
-            borderRadius: "999px",
-            background: "#fff",
-            color: "#000",
-            textDecoration: "none",
-            fontWeight: 500,
-            transition: "all 0.3s ease"
-          }}
+  padding: "16px 36px",
+  borderRadius: "999px",
+  background: "#ffffff",
+  color: "#000",
+  fontSize: "16px",
+  letterSpacing: "0.3px",
+  boxShadow: "0 10px 30px rgba(255,255,255,0.1)",
+  transition: "all 0.3s ease"
+}}
           onMouseEnter={(e) => {
             e.currentTarget.style.opacity = "0.8";
           }}
