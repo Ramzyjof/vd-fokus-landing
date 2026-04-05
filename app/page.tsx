@@ -172,15 +172,47 @@ export default function Page() {
       e.currentTarget.style.boxShadow = "none";
     }}
   >
-    <h2 style={{ fontSize: "22px", marginBottom: "16px" }}>
-      Our Package
-    </h2>
+  <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>
+  Our Package
+</h2>
 
-    <ul style={{ color: "#e2e8f0", lineHeight: "2" }}>
-      <li>CV Optimization</li>
-      <li>Interview Preparation</li>
-      <li>Mock Interview</li>
-    </ul>
+<p style={{ color: "#94a3b8", marginBottom: "16px" }}>
+  Complete CV & Interview Preparation to help you land interviews faster
+</p>
+
+{/* PRICE */}
+<div style={{ marginBottom: "20px" }}>
+  <span style={{ 
+    textDecoration: "line-through", 
+    color: "#64748b",
+    marginRight: "10px"
+  }}>
+    IDR 500K
+  </span>
+
+  <span style={{ 
+    fontSize: "32px", 
+    fontWeight: 600 
+  }}>
+    IDR 350K
+  </span>
+</div>
+
+{/* LIMITED OFFER */}
+<p style={{ 
+  color: "#facc15", 
+  fontSize: "14px",
+  marginBottom: "20px"
+}}>
+  🚀 Launching Offer — Limited to First 5 Clients Only
+</p>
+
+{/* SERVICES */}
+<ul style={{ color: "#e2e8f0", lineHeight: "2" }}>
+  <li>CV Optimization</li>
+  <li>Interview Preparation</li>
+  <li>Mock Interview</li>
+</ul>
   </div>
 </div>
       {/* CTA */}
