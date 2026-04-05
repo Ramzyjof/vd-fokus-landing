@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { FileText, Briefcase, UserCheck } from "lucide-react";
 
 export default function Page() {
   const [visible, setVisible] = useState(false);
@@ -10,40 +9,6 @@ export default function Page() {
   useEffect(() => {
     setVisible(true);
   }, []);
-
-  const sections = [
-    {
-      title: "Why You're keep failing on Interview",
-      icon: <FileText size={18} />,
-      items: [
-        "You may have had no interview preparation, or bad interview advice.",
-        "You did not do some in-person interview practicee",
-        "You did not maintain appropriate body language throughout the interview."
-      ]
-    },
-    {
-      title: "Why VD Fokus?",
-      icon: <UserCheck size={18} />,
-  items: [
-    "20+ years of Executive Search experience",
-    "Direct insight into how hiring managers evaluate candidates",
-    "We understand what gets candidates shortlisted — and what gets rejected",
-    "Personalized guidance tailored to your target role and industry",
-    "Focused on real outcomes: interviews, offers, and career growth"
-        
-      ]
-    },
-    {
-      title: "Our Package",
-      icon: <Briefcase size={18} />,
-      items: [
-        "CV Optimization",
-        "Interview Preparation",
-        "Mock Interview"
-        
-      ]
-    }
-  ];
 
   return (
     <main
@@ -151,69 +116,88 @@ export default function Page() {
   </div>
 
   {/* PACKAGE */}
-  <div
-    style={{
-      padding: "32px",
-      borderRadius: "20px",
-      background: "rgba(255,255,255,0.06)",
-      border: "1px solid rgba(255,255,255,0.1)",
-      backdropFilter: "blur(12px)",
+<div
+  style={{
+    padding: "32px",
+    borderRadius: "20px",
+    background: "rgba(255,255,255,0.06)",
+    border: "1px solid rgba(255,255,255,0.1)",
+    backdropFilter: "blur(12px)",
 
-      opacity: visible ? 1 : 0,
-      transform: visible ? "translateY(0)" : "translateY(100px)",
-      transition: "all 1s ease 0.6s"
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.transform = "translateY(-6px)";
-      e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.4)";
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = "translateY(0)";
-      e.currentTarget.style.boxShadow = "none";
+    opacity: visible ? 1 : 0,
+    transform: visible ? "translateY(0)" : "translateY(100px)",
+    transition: "all 1s ease 0.6s"
+  }}
+>
+  <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>
+    Our Package
+  </h2>
+
+  <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
+    Complete CV & Interview Preparation
+  </p>
+
+  {/* PRICE */}
+  <div style={{ marginBottom: "20px" }}>
+    <span style={{ textDecoration: "line-through", color: "#64748b", marginRight: "10px" }}>
+      IDR 500K
+    </span>
+    <span style={{ fontSize: "32px", fontWeight: 600 }}>
+      IDR 350K
+    </span>
+  </div>
+
+  <p style={{ color: "#facc15", fontSize: "14px", marginBottom: "20px" }}>
+    🚀 Launch Offer — Limited to 5 Clients
+  </p>
+
+  {/* DIVIDER */}
+  <div style={{
+    borderTop: "1px solid rgba(255,255,255,0.1)",
+    margin: "20px 0"
+  }} />
+
+  {/* FEATURES */}
+  <div style={{ marginBottom: "20px" }}>
+    {[
+      "CV Optimization",
+      "Interview Preparation",
+      "Mock Interview"
+    ].map((item, i) => (
+      <div
+        key={i}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "10px",
+          marginBottom: "10px",
+          color: "#cbd5f5"
+        }}
+      >
+        <span style={{ color: "#22c55e" }}>✔</span>
+        <span>{item}</span>
+      </div>
+    ))}
+  </div>
+
+  {/* WHATSAPP BUTTON */}
+  <a
+    href="https://wa.me/6281212940797?text=Hi%20VD%20Fokus,%20I%20want%20to%20book%20the%20CV%20and%20Interview%20Package"
+    style={{
+      display: "inline-block",
+      marginTop: "10px",
+      padding: "14px 28px",
+      borderRadius: "999px",
+      background: "#22c55e",
+      color: "#fff",
+      textDecoration: "none",
+      fontWeight: 500,
+      boxShadow: "0 10px 20px rgba(34,197,94,0.3)",
+      transition: "all 0.3s ease"
     }}
   >
-  <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>
-  Our Package
-</h2>
-
-<p style={{ color: "#94a3b8", marginBottom: "16px" }}>
-  Complete CV & Interview Preparation to help you land interviews faster
-</p>
-
-{/* PRICE */}
-<div style={{ marginBottom: "20px" }}>
-  <span style={{ 
-    textDecoration: "line-through", 
-    color: "#64748b",
-    marginRight: "10px"
-  }}>
-    IDR 500K
-  </span>
-
-  <span style={{ 
-    fontSize: "32px", 
-    fontWeight: 600 
-  }}>
-    IDR 350K
-  </span>
-</div>
-
-{/* LIMITED OFFER */}
-<p style={{ 
-  color: "#facc15", 
-  fontSize: "14px",
-  marginBottom: "20px"
-}}>
-  🚀 Launching Offer — Limited to First 5 Clients Only
-</p>
-
-{/* SERVICES */}
-<ul style={{ color: "#e2e8f0", lineHeight: "2" }}>
-  <li>CV Optimization</li>
-  <li>Interview Preparation</li>
-  <li>Mock Interview</li>
-</ul>
-  </div>
+    Book via WhatsApp
+  </a>
 </div>
       {/* CTA */}
       <div style={{ textAlign: "center", margin: "80px 0" }}>
@@ -226,13 +210,13 @@ export default function Page() {
             color: "#000",
             fontSize: "16px",
             letterSpacing: "0.3px",
-            boxShadow: "0 10px 30px rgba(255,255,255,0.1)",
-            transition: "all 0.3s ease"
+            boxShadow: "0 10px 30px rgba(255,255,255,0.1)"
           }}
         >
           Get Started
         </a>
       </div>
+
     </main>
   );
 }
