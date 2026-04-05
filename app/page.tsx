@@ -90,44 +90,67 @@ export default function Page() {
   }}
 />
       {/* CONTENT */}
-      <div
+<div
   style={{
     maxWidth: "800px",
     margin: "auto",
     padding: "40px 20px",
 
-    // 👇 THIS IS THE ANIMATION
     opacity: visible ? 1 : 0,
-    transform: visible ? "translateY(0)" : "translateY(30px)",
-    transition: "all 0.8s ease 0.2s"
-  
+    transform: visible ? "translateY(0)" : "translateY(60px)",
+    transition: "all 1s ease 0.2s"
   }}
 >
   {/* WHY FAIL */}
-  <div style={{ marginBottom: "40px" }}>
-    <h2 style={{ fontSize: "20px", marginBottom: "10px" }}>
+  <div
+    style={{
+      marginBottom: "50px",
+      opacity: visible ? 1 : 0,
+      transform: visible ? "translateY(0)" : "translateY(60px)",
+      transition: "all 1s ease 0.2s"
+    }}
+  >
+    <h2 style={{ fontSize: "22px", marginBottom: "12px", fontWeight: 500 }}>
       Why You Keep Failing Interviews
     </h2>
-    <ul style={{ color: "#cbd5f5", lineHeight: "1.9" }}>
-      <li>Lack of proper interview preparation</li>
-      <li>No structured practice or feedback</li>
-      <li>Weak body language and communication</li>
+
+    <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
+      Most candidates don’t fail because they lack experience — they fail because they present it poorly.
+    </p>
+
+    <ul style={{ color: "#e2e8f0", lineHeight: "2" }}>
+      <li>❌ No structured interview preparation</li>
+      <li>❌ Lack of real feedback or practice</li>
+      <li>❌ Weak communication & body language</li>
     </ul>
   </div>
 
   {/* WHY VD FOKUS */}
-  <div style={{ marginBottom: "50px" }}>
-    <h2 style={{ fontSize: "20px", marginBottom: "10px" }}>
+  <div
+    style={{
+      marginBottom: "60px",
+      opacity: visible ? 1 : 0,
+      transform: visible ? "translateY(0)" : "translateY(60px)",
+      transition: "all 1s ease 0.4s"
+    }}
+  >
+    <h2 style={{ fontSize: "22px", marginBottom: "12px", fontWeight: 500 }}>
       Why VD Fokus?
     </h2>
-    <ul style={{ color: "#cbd5f5", lineHeight: "1.9" }}>
-      <li>20+ years of Executive Search experience</li>
-      <li>Direct insight into hiring manager expectations</li>
-      <li>Focused on real outcomes: interviews and offers</li>
+
+    <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
+      We don’t guess what works — we know what hiring managers actually look for.
+    </p>
+
+    <ul style={{ color: "#e2e8f0", lineHeight: "2" }}>
+      <li>✅ 20+ years of Executive Search experience</li>
+      <li>✅ Direct insight into hiring decisions</li>
+      <li>✅ Proven strategies to get shortlisted</li>
+      <li>✅ Focused on real outcomes: interviews & offers</li>
     </ul>
   </div>
 
-  {/* PACKAGE (HIGHLIGHTED) */}
+  {/* PACKAGE */}
   <div
     style={{
       padding: "32px",
@@ -135,7 +158,10 @@ export default function Page() {
       background: "rgba(255,255,255,0.06)",
       border: "1px solid rgba(255,255,255,0.1)",
       backdropFilter: "blur(12px)",
-      transition: "all 0.4s ease"
+
+      opacity: visible ? 1 : 0,
+      transform: visible ? "translateY(0)" : "translateY(100px)",
+      transition: "all 1s ease 0.6s"
     }}
     onMouseEnter={(e) => {
       e.currentTarget.style.transform = "translateY(-6px)";
@@ -156,41 +182,20 @@ export default function Page() {
       <li>Mock Interview</li>
     </ul>
   </div>
-  <div
-  style={{
-    padding: "32px",
-    borderRadius: "20px",
-    background: "rgba(255,255,255,0.06)",
-    border: "1px solid rgba(255,255,255,0.1)",
-    backdropFilter: "blur(12px)",
-
-    // 👇 ADD THIS
-    opacity: visible ? 1 : 0,
-    transform: visible ? "translateY(0)" : "translateY(50px)",
-    transition: "all 0.8s ease 0.4s"
-  }}
-></div>
 </div>
-
       {/* CTA */}
       <div style={{ textAlign: "center", margin: "80px 0" }}>
         <a
           href="https://wa.me/6281212940797"
           style={{
-  padding: "16px 36px",
-  borderRadius: "999px",
-  background: "#ffffff",
-  color: "#000",
-  fontSize: "16px",
-  letterSpacing: "0.3px",
-  boxShadow: "0 10px 30px rgba(255,255,255,0.1)",
-  transition: "all 0.3s ease"
-}}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.opacity = "0.8";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.opacity = "1";
+            padding: "16px 36px",
+            borderRadius: "999px",
+            background: "#ffffff",
+            color: "#000",
+            fontSize: "16px",
+            letterSpacing: "0.3px",
+            boxShadow: "0 10px 30px rgba(255,255,255,0.1)",
+            transition: "all 0.3s ease"
           }}
         >
           Get Started
