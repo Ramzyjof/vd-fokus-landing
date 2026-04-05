@@ -7,7 +7,9 @@ export default function Page() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setVisible(true);
+    setTimeout(() => {
+      setVisible(true);
+    }, 300);
   }, []);
 
   return (
@@ -20,14 +22,9 @@ export default function Page() {
       }}
     >
       {/* NAVBAR */}
-      <div style={{ padding: "24px 40px", display: "flex", alignItems: "center" }}>
-  <Image 
-    src="/logo.png" 
-    alt="VD Fokus" 
-    width={120} 
-    height={40}
-  />
-</div>
+      <div style={{ padding: "24px 40px" }}>
+        <Image src="/logo.png" alt="VD Fokus" width={120} height={40} />
+      </div>
 
       {/* HERO */}
       <section
@@ -35,170 +32,142 @@ export default function Page() {
           textAlign: "center",
           padding: "80px 20px",
           opacity: visible ? 1 : 0,
-          transform: visible ? "translateY(0)" : "translateY(20px)",
-          transition: "all 0.8s ease"
+          transform: visible ? "translateY(0)" : "translateY(40px)",
+          transition: "all 1s ease"
         }}
       >
-        <h1 style={{ fontSize: "42px", fontWeight: 500, letterSpacing: "-0.5px" }}>
-          Get Hired Faster 
+        <h1 style={{ fontSize: "42px", fontWeight: 500 }}>
+          Get Hired Faster
         </h1>
 
         <p style={{ marginTop: "16px", color: "#94a3b8", fontSize: "18px" }}>
-          "We help professionals pass HR screening and interviews using real hiring insights."
+          We help professionals pass HR screening and interviews using real hiring insights.
         </p>
       </section>
-<div
-  style={{
-    width: "60%",
-    margin: "0 auto 40px",
-    borderTop: "1px solid rgba(255,255,255,0.1)"
-  }}
-/>
-      {/* CONTENT */}
-<div
-  style={{
-    maxWidth: "800px",
-    margin: "auto",
-    padding: "40px 20px",
 
-    opacity: visible ? 1 : 0,
-    transform: visible ? "translateY(0)" : "translateY(60px)",
-    transition: "all 1s ease 0.2s"
-  }}
->
-  {/* WHY FAIL */}
-  <div
-    style={{
-      marginBottom: "50px",
-      opacity: visible ? 1 : 0,
-      transform: visible ? "translateY(0)" : "translateY(60px)",
-      transition: "all 1s ease 0.2s"
-    }}
-  >
-    <h2 style={{ fontSize: "22px", marginBottom: "12px", fontWeight: 500 }}>
-      Why You Keep Failing Interviews
-    </h2>
-
-    <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
-      Most candidates don’t fail because they lack experience — they fail because they present it poorly.
-    </p>
-
-    <ul style={{ color: "#e2e8f0", lineHeight: "2" }}>
-      <li>❌ No structured interview preparation</li>
-      <li>❌ Lack of real feedback or practice</li>
-      <li>❌ Weak communication & body language</li>
-    </ul>
-  </div>
-
-  {/* WHY VD FOKUS */}
-  <div
-    style={{
-      marginBottom: "60px",
-      opacity: visible ? 1 : 0,
-      transform: visible ? "translateY(0)" : "translateY(60px)",
-      transition: "all 1s ease 0.4s"
-    }}
-  >
-    <h2 style={{ fontSize: "22px", marginBottom: "12px", fontWeight: 500 }}>
-      Why VD Fokus?
-    </h2>
-
-    <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
-      We don’t guess what works — we know what hiring managers actually look for.
-    </p>
-
-    <ul style={{ color: "#e2e8f0", lineHeight: "2" }}>
-      <li>✅ 20+ years of Executive Search experience</li>
-      <li>✅ Direct insight into hiring decisions</li>
-      <li>✅ Proven strategies to get shortlisted</li>
-      <li>✅ Focused on real outcomes: interviews & offers</li>
-    </ul>
-  </div>
-
-  {/* PACKAGE */}
-<div
-  style={{
-    padding: "32px",
-    borderRadius: "20px",
-    background: "rgba(255,255,255,0.06)",
-    border: "1px solid rgba(255,255,255,0.1)",
-    backdropFilter: "blur(12px)",
-
-    opacity: visible ? 1 : 0,
-    transform: visible ? "translateY(0)" : "translateY(100px)",
-    transition: "all 1s ease 0.6s"
-  }}
->
-  <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>
-    Our Package
-  </h2>
-
-  <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
-    Complete CV & Interview Preparation
-  </p>
-
-  {/* PRICE */}
-  <div style={{ marginBottom: "20px" }}>
-    <span style={{ textDecoration: "line-through", color: "#64748b", marginRight: "10px" }}>
-      IDR 500K
-    </span>
-    <span style={{ fontSize: "32px", fontWeight: 600 }}>
-      IDR 350K
-    </span>
-  </div>
-
-  <p style={{ color: "#facc15", fontSize: "14px", marginBottom: "20px" }}>
-    🚀 Launch Offer — Limited to 5 Clients
-  </p>
-
-  {/* DIVIDER */}
-  <div style={{
-    borderTop: "1px solid rgba(255,255,255,0.1)",
-    margin: "20px 0"
-  }} />
-
-  {/* FEATURES */}
-  <div style={{ marginBottom: "20px" }}>
-    {[
-      "CV Optimization",
-      "Interview Preparation",
-      "Mock Interview"
-    ].map((item, i) => (
+      {/* DIVIDER */}
       <div
-        key={i}
         style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "10px",
-          marginBottom: "10px",
-          color: "#cbd5f5"
+          width: "60%",
+          margin: "0 auto 40px",
+          borderTop: "1px solid rgba(255,255,255,0.1)"
+        }}
+      />
+
+      {/* CONTENT */}
+      <div
+        style={{
+          maxWidth: "800px",
+          margin: "auto",
+          padding: "40px 20px",
+          opacity: visible ? 1 : 0,
+          transform: visible ? "translateY(0)" : "translateY(60px)",
+          transition: "all 1s ease 0.2s"
         }}
       >
-        <span style={{ color: "#22c55e" }}>✔</span>
-        <span>{item}</span>
-      </div>
-    ))}
-  </div>
+        {/* WHY FAIL */}
+        <div style={{ marginBottom: "50px" }}>
+          <h2 style={{ fontSize: "22px", marginBottom: "12px" }}>
+            Why You Keep Failing Interviews
+          </h2>
 
-  {/* WHATSAPP BUTTON */}
-  <a
-    href="https://wa.me/6281212940797?text=Hi%20VD%20Fokus,%20I%20want%20to%20book%20the%20CV%20and%20Interview%20Package"
-    style={{
-      display: "inline-block",
-      marginTop: "10px",
-      padding: "14px 28px",
-      borderRadius: "999px",
-      background: "#22c55e",
-      color: "#fff",
-      textDecoration: "none",
-      fontWeight: 500,
-      boxShadow: "0 10px 20px rgba(34,197,94,0.3)",
-      transition: "all 0.3s ease"
-    }}
-  >
-    Book via WhatsApp
-  </a>
-</div>
+          <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
+            Most candidates don’t fail because they lack experience — they fail because they present it poorly.
+          </p>
+
+          <ul style={{ lineHeight: "2", color: "#e2e8f0" }}>
+            <li>❌ No structured interview preparation</li>
+            <li>❌ Lack of real feedback or practice</li>
+            <li>❌ Weak communication & body language</li>
+          </ul>
+        </div>
+
+        {/* WHY VD FOKUS */}
+        <div style={{ marginBottom: "60px" }}>
+          <h2 style={{ fontSize: "22px", marginBottom: "12px" }}>
+            Why VD Fokus?
+          </h2>
+
+          <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
+            We know what hiring managers actually look for — because we’ve been on the other side.
+          </p>
+
+          <ul style={{ lineHeight: "2", color: "#e2e8f0" }}>
+            <li>✅ 20+ years of Executive Search experience</li>
+            <li>✅ Direct insight into hiring decisions</li>
+            <li>✅ Proven strategies to get shortlisted</li>
+            <li>✅ Focused on real outcomes: interviews & offers</li>
+          </ul>
+        </div>
+
+        {/* PACKAGE */}
+        <div
+          style={{
+            padding: "32px",
+            borderRadius: "20px",
+            background: "rgba(255,255,255,0.06)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            backdropFilter: "blur(12px)",
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateY(0)" : "translateY(100px)",
+            transition: "all 1s ease 0.4s"
+          }}
+        >
+          <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>
+            Our Package
+          </h2>
+
+          <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
+            Complete CV & Interview Preparation
+          </p>
+
+          {/* PRICE */}
+          <div style={{ marginBottom: "20px" }}>
+            <span style={{ textDecoration: "line-through", color: "#64748b", marginRight: "10px" }}>
+              IDR 500K
+            </span>
+            <span style={{ fontSize: "32px", fontWeight: 600 }}>
+              IDR 350K
+            </span>
+          </div>
+
+          <p style={{ color: "#facc15", fontSize: "14px", marginBottom: "20px" }}>
+            🚀 Launch Offer — Limited to 5 Clients
+          </p>
+
+          <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", margin: "20px 0" }} />
+
+          {/* FEATURES */}
+          {[
+            "CV Optimization",
+            "Interview Preparation",
+            "Mock Interview"
+          ].map((item, i) => (
+            <div key={i} style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
+              <span style={{ color: "#22c55e" }}>✔</span>
+              <span style={{ color: "#cbd5f5" }}>{item}</span>
+            </div>
+          ))}
+
+          {/* BUTTON */}
+          <a
+            href="https://wa.me/6281212940797?text=Hi%20VD%20Fokus,%20I%20want%20to%20book%20the%20CV%20and%20Interview%20Package"
+            style={{
+              display: "inline-block",
+              marginTop: "20px",
+              padding: "14px 28px",
+              borderRadius: "999px",
+              background: "#22c55e",
+              color: "#fff",
+              textDecoration: "none",
+              fontWeight: 500
+            }}
+          >
+            Book via WhatsApp
+          </a>
+        </div>
+      </div>
+
       {/* CTA */}
       <div style={{ textAlign: "center", margin: "80px 0" }}>
         <a
@@ -208,15 +177,12 @@ export default function Page() {
             borderRadius: "999px",
             background: "#ffffff",
             color: "#000",
-            fontSize: "16px",
-            letterSpacing: "0.3px",
-            boxShadow: "0 10px 30px rgba(255,255,255,0.1)"
+            fontSize: "16px"
           }}
         >
           Get Started
         </a>
       </div>
-
     </main>
   );
 }
