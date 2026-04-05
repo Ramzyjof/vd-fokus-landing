@@ -37,7 +37,7 @@ export default function Page() {
         }}
       >
         <h1 style={{ fontSize: "42px", fontWeight: 500 }}>
-          Get Hired Faster
+          Get Selected — Not Just Interviewed
         </h1>
 
         <p style={{ marginTop: "16px", color: "#94a3b8", fontSize: "18px" }}>
