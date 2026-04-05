@@ -24,9 +24,12 @@ export default function Page() {
     {
       title: "Why VD Fokus?",
       icon: <UserCheck size={18} />,
-      items: [
-        "20+ years of Executive Search background",
-        "Direct hiring manager insights",
+  items: [
+    "20+ years of Executive Search experience",
+    "Direct insight into how hiring managers evaluate candidates",
+    "We understand what gets candidates shortlisted — and what gets rejected",
+    "Personalized guidance tailored to your target role and industry",
+    "Focused on real outcomes: interviews, offers, and career growth"
         
       ]
     },
@@ -87,41 +90,87 @@ export default function Page() {
   }}
 />
       {/* CONTENT */}
-      <div style={{ maxWidth: "800px", margin: "auto", padding: "40px 20px" }}>
-        {sections.map((section, index) => (
-          <div
-            key={index}
-            style={{
-              padding: "28px",
-              marginBottom: "20px",
-              borderRadius: "16px",
-              background: "rgba(255,255,255,0.03)",
-              transition: "all 0.3s ease"
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-3px)";
-              e.currentTarget.style.background = "rgba(255,255,255,0.06)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.background = "rgba(255,255,255,0.03)";
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-              {section.icon}
-              <h2 style={{ fontSize: "18px", fontWeight: 500 }}>
-                {section.title}
-              </h2>
-            </div>
+      <div
+  style={{
+    maxWidth: "800px",
+    margin: "auto",
+    padding: "40px 20px",
 
-            <ul style={{ lineHeight: "1.9", color: "#cbd5f5", paddingLeft: "18px" }}>
-              {section.items.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
+    // 👇 THIS IS THE ANIMATION
+    opacity: visible ? 1 : 0,
+    transform: visible ? "translateY(0)" : "translateY(30px)",
+    transition: "all 0.8s ease 0.2s"
+  
+  }}
+>
+  {/* WHY FAIL */}
+  <div style={{ marginBottom: "40px" }}>
+    <h2 style={{ fontSize: "20px", marginBottom: "10px" }}>
+      Why You Keep Failing Interviews
+    </h2>
+    <ul style={{ color: "#cbd5f5", lineHeight: "1.9" }}>
+      <li>Lack of proper interview preparation</li>
+      <li>No structured practice or feedback</li>
+      <li>Weak body language and communication</li>
+    </ul>
+  </div>
+
+  {/* WHY VD FOKUS */}
+  <div style={{ marginBottom: "50px" }}>
+    <h2 style={{ fontSize: "20px", marginBottom: "10px" }}>
+      Why VD Fokus?
+    </h2>
+    <ul style={{ color: "#cbd5f5", lineHeight: "1.9" }}>
+      <li>20+ years of Executive Search experience</li>
+      <li>Direct insight into hiring manager expectations</li>
+      <li>Focused on real outcomes: interviews and offers</li>
+    </ul>
+  </div>
+
+  {/* PACKAGE (HIGHLIGHTED) */}
+  <div
+    style={{
+      padding: "32px",
+      borderRadius: "20px",
+      background: "rgba(255,255,255,0.06)",
+      border: "1px solid rgba(255,255,255,0.1)",
+      backdropFilter: "blur(12px)",
+      transition: "all 0.4s ease"
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = "translateY(-6px)";
+      e.currentTarget.style.boxShadow = "0 20px 40px rgba(0,0,0,0.4)";
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = "translateY(0)";
+      e.currentTarget.style.boxShadow = "none";
+    }}
+  >
+    <h2 style={{ fontSize: "22px", marginBottom: "16px" }}>
+      Our Package
+    </h2>
+
+    <ul style={{ color: "#e2e8f0", lineHeight: "2" }}>
+      <li>CV Optimization</li>
+      <li>Interview Preparation</li>
+      <li>Mock Interview</li>
+    </ul>
+  </div>
+  <div
+  style={{
+    padding: "32px",
+    borderRadius: "20px",
+    background: "rgba(255,255,255,0.06)",
+    border: "1px solid rgba(255,255,255,0.1)",
+    backdropFilter: "blur(12px)",
+
+    // 👇 ADD THIS
+    opacity: visible ? 1 : 0,
+    transform: visible ? "translateY(0)" : "translateY(50px)",
+    transition: "all 0.8s ease 0.4s"
+  }}
+></div>
+</div>
 
       {/* CTA */}
       <div style={{ textAlign: "center", margin: "80px 0" }}>
