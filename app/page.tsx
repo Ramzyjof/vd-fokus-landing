@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+const [pressed, setPressed] = useState(false);
 
 export default function Page() {
   const [visible, setVisible] = useState(false);
@@ -82,61 +83,75 @@ export default function Page() {
           </ul>
         </div>
 
-        {/* WHY VD FOKUS */}
-        <div style={{ marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "22px", marginBottom: "12px" }}>
-            Why VD Fokus?
-          </h2>
+       {/* PACKAGE */}
+<div
+  style={{
+    padding: "32px",
+    borderRadius: "20px",
+    background: "linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02))",
+    border: "1px solid rgba(255,255,255,0.1)",
+    backdropFilter: "blur(12px)",
 
-          <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
-            We know what hiring managers actually look for — because we’ve been on the other side.
-          </p>
+    // ✨ ANIMATION
+    opacity: visible ? 1 : 0,
+    transform: visible
+      ? pressed
+        ? "scale(0.98) translateY(0)"
+        : "scale(1) translateY(0)"
+      : "translateY(100px)",
 
-          <ul style={{ lineHeight: "2", color: "#e2e8f0" }}>
-            <li>✅ 20+ years of Executive Search experience</li>
-            <li>✅ Direct insight into hiring decisions</li>
-            <li>✅ Proven strategies to get shortlisted</li>
-            <li>✅ Focused on real outcomes: interviews & offers</li>
-          </ul>
-        </div>
+    transition: "all 0.3s ease",
 
-        {/* PACKAGE */}
-        <div
-          style={{
-            padding: "32px",
-            borderRadius: "20px",
-            background: "rgba(255,255,255,0.06)",
-            border: "1px solid rgba(255,255,255,0.1)",
-            backdropFilter: "blur(12px)",
-            opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0)" : "translateY(100px)",
-            transition: "all 1s ease 0.4s"
-          }}
-        >
-          <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>
-            Our Package
-          </h2>
+    // ✨ SHADOW
+    boxShadow: pressed
+      ? "0 5px 15px rgba(0,0,0,0.3)"
+      : "0 10px 30px rgba(0,0,0,0.4)"
+  }}
 
-          <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
-            Complete CV & Interview Preparation
-          </p>
+  onMouseEnter={(e) => {
+    if (!pressed) {
+      e.currentTarget.style.transform = "translateY(-8px) scale(1.02)";
+      e.currentTarget.style.boxShadow = "0 25px 50px rgba(0,0,0,0.6)";
+    }
+  }}
 
-          {/* PRICE */}
-          <div style={{ marginBottom: "20px" }}>
-  <span style={{ 
-    textDecoration: "line-through", 
-    color: "#64748b",
-    marginRight: "10px",
-    fontSize: "22px"
-  }}>
-    IDR 400k
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = "translateY(0) scale(1)";
+    e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.4)";
+  }}
+
+  onMouseDown={() => setPressed(true)}
+  onMouseUp={() => setPressed(false)}
+>
+  <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>
+    Our Package
+  </h2>
+
+  <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
+    Complete CV & Interview Preparation
+  </p>
+
+  {/* PRICE */}
+  {/* PRICE */}
+<div style={{ marginBottom: "20px" }}>
+  <span
+    style={{
+      textDecoration: "line-through",
+      color: "#64748b",
+      marginRight: "10px",
+      fontSize: "22px"
+    }}
+  >
+    IDR 400K
   </span>
 
-  <span style={{ 
-    fontSize: "24px", 
-    fontWeight: 600 
-  }}>
-    IDR 299k
+  <span
+    style={{
+      fontSize: "24px",
+      fontWeight: 600
+    }}
+  >
+    IDR 299K
   </span>
 </div>
           <p style={{ color: "#facc15", fontSize: "14px", marginBottom: "20px" }}>
@@ -146,16 +161,18 @@ export default function Page() {
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", margin: "20px 0" }} />
 
           {/* FEATURES */}
-          {[
-            "CV Optimization",
-            "Interview Preparation",
-            "Mock Interview"
-          ].map((item, i) => (
-            <div key={i} style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
-              <span style={{ color: "#22c55e" }}>✔</span>
-              <span style={{ color: "#cbd5f5" }}>{item}</span>
-            </div>
-          ))}
+         {[
+  "CV Optimization",
+  "Interview Preparation",
+  "Mock Interview",
+  "🎁 Free additional Interview Preparation after your first interview",
+  "⏱ Optional extension: +IDR 100K / hour"
+].map((item, i) => (
+  <div key={i} style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
+    <span style={{ color: "#22c55e" }}>✔</span>
+    <span style={{ color: "#cbd5f5" }}>{item}</span>
+  </div>
+))}
 
           {/* BUTTON */}
           <a
