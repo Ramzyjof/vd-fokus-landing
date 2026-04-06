@@ -132,7 +132,6 @@ export default function Page() {
   </p>
 
   {/* PRICE */}
-  {/* PRICE */}
 <div style={{ marginBottom: "20px" }}>
   <span
     style={{
@@ -154,25 +153,6 @@ export default function Page() {
     IDR 299K
   </span>
 </div>
-          <p style={{ color: "#facc15", fontSize: "14px", marginBottom: "20px" }}>
-            🚀 Launch Offer — Limited to 5 Clients
-          </p>
-
-          <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", margin: "20px 0" }} />
-
-          {/* FEATURES */}
-         {[
-  "CV Optimization",
-  "Interview Preparation",
-  "Mock Interview",
-  "🎁 Free additional Interview Preparation after your first interview",
-  "⏱ Optional extension: +IDR 100K / hour"
-].map((item, i) => (
-  <div key={i} style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
-    <span style={{ color: "#22c55e" }}>✔</span>
-    <span style={{ color: "#cbd5f5" }}>{item}</span>
-  </div>
-))}
 
           {/* BUTTON */}
           <a
