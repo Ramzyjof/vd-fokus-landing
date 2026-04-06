@@ -122,15 +122,23 @@ export default function Page() {
           </p>
 
           {/* PRICE */}
-          <div style={{ marginBottom: "38px" }}>
-            <span style={{ textDecoration: "line-through", color: "#d8dce0", marginRight: "20px" }}>
-              IDR 400K
-            </span>
-            <span style={{ fontSize: "38px", fontWeight: 600 }}>
-              IDR 299K
-            </span>
-          </div>
+          <div style={{ marginBottom: "20px" }}>
+  <span style={{ 
+    textDecoration: "line-through", 
+    color: "#64748b",
+    marginRight: "10px",
+    fontSize: "22px"
+  }}>
+    IDR 400k
+  </span>
 
+  <span style={{ 
+    fontSize: "24px", 
+    fontWeight: 600 
+  }}>
+    IDR 299k
+  </span>
+</div>
           <p style={{ color: "#facc15", fontSize: "14px", marginBottom: "20px" }}>
             🚀 Launch Offer — Limited to 5 Clients
           </p>
