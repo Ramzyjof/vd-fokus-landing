@@ -114,7 +114,32 @@ export default function Page() {
             <li>❌ Weak communication & body language</li>
           </ul>
         </div>
-        {/* TESTIMONIALS */}
+        
+{/* WHY VD FOKUS */}
+<div
+  style={{
+    marginBottom: "60px",
+    opacity: visible ? 1 : 0,
+    transform: visible ? "translateY(0)" : "translateY(60px)",
+    transition: "all 1s ease 0.3s"
+  }}
+>
+  <h2 style={{ fontSize: "22px", marginBottom: "12px" }}>
+    Why VD Fokus?
+  </h2>
+
+  <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
+    We know what hiring managers actually look for — because we’ve been on the other side.
+  </p>
+
+  <ul style={{ lineHeight: "2", color: "#e2e8f0" }}>
+    <li>✅ 20+ years of Executive Search experience</li>
+    <li>✅ Direct insight into hiring decisions</li>
+    <li>✅ Proven strategies to get shortlisted</li>
+    <li>✅ Focused on real outcomes: interviews & offers</li>
+  </ul>
+</div>
+{/* TESTIMONIALS */}
 <div style={{ marginBottom: "60px" }}>
   <h2 style={{ fontSize: "22px", marginBottom: "20px" }}>
     What Professionals Say
@@ -172,30 +197,6 @@ export default function Page() {
       </div>
     ))}
   </div>
-</div>
-{/* WHY VD FOKUS */}
-<div
-  style={{
-    marginBottom: "60px",
-    opacity: visible ? 1 : 0,
-    transform: visible ? "translateY(0)" : "translateY(60px)",
-    transition: "all 1s ease 0.3s"
-  }}
->
-  <h2 style={{ fontSize: "22px", marginBottom: "12px" }}>
-    Why VD Fokus?
-  </h2>
-
-  <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
-    We know what hiring managers actually look for — because we’ve been on the other side.
-  </p>
-
-  <ul style={{ lineHeight: "2", color: "#e2e8f0" }}>
-    <li>✅ 20+ years of Executive Search experience</li>
-    <li>✅ Direct insight into hiring decisions</li>
-    <li>✅ Proven strategies to get shortlisted</li>
-    <li>✅ Focused on real outcomes: interviews & offers</li>
-  </ul>
 </div>
        {/* PACKAGE */}
 <div
