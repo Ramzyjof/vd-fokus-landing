@@ -37,24 +37,23 @@ export default function Page() {
   }}
 />
       {/* NAVBAR */}
-      {/* NAVBAR */}
-<div
+      <div
   style={{
     padding: "16px 40px",
     display: "flex",
     justifyContent: "flex-end",
     alignItems: "center",
 
-    // ✨ GLASS EFFECT
     background: "rgba(255,255,255,0.05)",
     backdropFilter: "blur(12px)",
     borderBottom: "1px solid rgba(255,255,255,0.08)",
 
-    // ✨ MAKE IT STICK ON TOP
+    // 🔥 THIS MAKES IT STICK
     position: "sticky",
     top: 0,
-    zIndex: 100
+    zIndex: 1000
   }}
+
 >
   <Image
     src="/logo.png"
