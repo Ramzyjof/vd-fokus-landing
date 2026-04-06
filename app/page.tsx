@@ -37,15 +37,35 @@ export default function Page() {
   }}
 />
       {/* NAVBAR */}
-      <div
+      {/* NAVBAR */}
+<div
   style={{
-    padding: "24px 40px",
+    padding: "16px 40px",
     display: "flex",
     justifyContent: "flex-end",
-    alignItems: "center"
-  }}
-/>
+    alignItems: "center",
 
+    // ✨ GLASS EFFECT
+    background: "rgba(255,255,255,0.05)",
+    backdropFilter: "blur(12px)",
+    borderBottom: "1px solid rgba(255,255,255,0.08)",
+
+    // ✨ MAKE IT STICK ON TOP
+    position: "sticky",
+    top: 0,
+    zIndex: 100
+  }}
+>
+  <Image
+    src="/logo.png"
+    alt="VD Fokus"
+    width={120}
+    height={40}
+    style={{
+      filter: "drop-shadow(0 0 10px rgba(255,255,255,0.2))"
+    }}
+  />
+</div>
       {/* HERO */}
       <section
         style={{
@@ -56,7 +76,7 @@ export default function Page() {
           transition: "all 1s ease"
         }}
       >
-        <h1 style={{ fontSize: "38px", fontWeight: 500 }}>
+        <h1 style={{ fontSize: "48px", fontWeight: 600, letterSpacing: "-1px" }}>
           Get Selected — Not Just Interviewed
         </h1>
 
@@ -136,8 +156,8 @@ export default function Page() {
     backdropFilter: "blur(12px)",
     transition: "all 0.3s ease",
     outline: "none",
-
-    boxShadow: "0 10px 30px rgba(0,0,0,0.4)"
+    marginTop: "40px",
+    boxShadow: "0 30px 80px rgba(0,0,0,0.6)"
   }}
 
   // 🖱 HOVER
