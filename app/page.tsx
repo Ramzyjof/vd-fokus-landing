@@ -36,7 +36,7 @@ export default function Page() {
           transition: "all 1s ease"
         }}
       >
-        <h1 style={{ fontSize: "42px", fontWeight: 500 }}>
+        <h1 style={{ fontSize: "38px", fontWeight: 500 }}>
           Get Selected — Not Just Interviewed
         </h1>
 
