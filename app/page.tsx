@@ -116,14 +116,41 @@ export default function Page() {
 </div>
        {/* PACKAGE */}
 <div
+  tabIndex={0}
   style={{
     padding: "32px",
     borderRadius: "20px",
     background: "rgba(255,255,255,0.06)",
     border: "1px solid rgba(255,255,255,0.1)",
     backdropFilter: "blur(12px)",
-    transition: "all 0.3s ease"
+    transition: "all 0.3s ease",
+    outline: "none",
+
+    boxShadow: "0 10px 30px rgba(0,0,0,0.4)"
   }}
+
+  // 🖱 HOVER
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = "translateY(-8px) scale(1.02)";
+    e.currentTarget.style.boxShadow = "0 25px 50px rgba(0,0,0,0.6)";
+  }}
+
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = "translateY(0) scale(1)";
+    e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.4)";
+  }}
+
+  // ⌨ FOCUS (TAB)
+  onFocus={(e) => {
+    e.currentTarget.style.transform = "translateY(-8px) scale(1.02)";
+    e.currentTarget.style.boxShadow = "0 25px 50px rgba(0,0,0,0.6)";
+  }}
+
+  onBlur={(e) => {
+    e.currentTarget.style.transform = "translateY(0) scale(1)";
+    e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.4)";
+  }}
+
 >
   <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>
     Our Package
@@ -200,7 +227,7 @@ export default function Page() {
   color: "#fff",
   textDecoration: "none",
   fontWeight: 500,
-  animation: "pulse 1.5s infinite"
+  animation: "pulse 1.5s"
 }}
 
   onMouseEnter={(e) => {
