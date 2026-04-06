@@ -123,10 +123,10 @@ export default function Page() {
 
           {/* PRICE */}
           <div style={{ marginBottom: "38px" }}>
-            <span style={{ textDecoration: "line-through", color: "#64748b", marginRight: "10px" }}>
+            <span style={{ textDecoration: "line-through", color: "#d8dce0", marginRight: "20px" }}>
               IDR 400K
             </span>
-            <span style={{ fontSize: "38px", fontWeight: 800 }}>
+            <span style={{ fontSize: "38px", fontWeight: 600 }}>
               IDR 299K
             </span>
           </div>
