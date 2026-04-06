@@ -30,10 +30,21 @@ export default function Page() {
 }
 `}
 </style>
+<div
+  style={{
+    borderBottom: "1px solid rgba(255,255,255,0.08)",
+    marginBottom: "20px"
+  }}
+/>
       {/* NAVBAR */}
-      <div style={{ padding: "24px 40px" }}>
-        <Image src="/logo.png" alt="VD Fokus" width={120} height={40} />
-      </div>
+      <div
+  style={{
+    padding: "24px 40px",
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "center"
+  }}
+/>
 
       {/* HERO */}
       <section
@@ -153,11 +164,11 @@ export default function Page() {
 
 >
   <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>
-    Our Package
+    Career Acceleration Services Package
   </h2>
 
   <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
-    Complete CV & Interview Preparation
+    Everything you need to get shortlisted, perform confidently, and secure job offers.
   </p>
 
   {/* PRICE */}
