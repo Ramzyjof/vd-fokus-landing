@@ -114,6 +114,65 @@ export default function Page() {
             <li>❌ Weak communication & body language</li>
           </ul>
         </div>
+        {/* TESTIMONIALS */}
+<div style={{ marginBottom: "60px" }}>
+  <h2 style={{ fontSize: "22px", marginBottom: "20px" }}>
+    What Professionals Say
+  </h2>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gap: "20px"
+    }}
+  >
+    {[
+      {
+        text: "After applying the changes, I finally started getting interview calls within 2 weeks.",
+        name: "Senior Candidate",
+        role: "Operations Manager"
+      },
+      {
+        text: "The interview preparation completely changed how I present myself. I felt much more confident.",
+        name: "Mid-Level Professional",
+        role: "Finance Executive"
+      },
+      {
+        text: "This helped me understand what hiring managers actually look for. Huge difference.",
+        name: "Job Seeker",
+        role: "Business Analyst"
+      }
+    ].map((t, i) => (
+      <div
+        key={i}
+        style={{
+          padding: "20px",
+          borderRadius: "16px",
+          background: "rgba(255,255,255,0.04)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          transition: "all 0.3s ease"
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateY(-5px)";
+          e.currentTarget.style.background = "rgba(255,255,255,0.08)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateY(0)";
+          e.currentTarget.style.background = "rgba(255,255,255,0.04)";
+        }}
+      >
+        <p style={{ color: "#e2e8f0", marginBottom: "12px", lineHeight: "1.6" }}>
+          “{t.text}”
+        </p>
+
+        <div style={{ fontSize: "13px", color: "#94a3b8" }}>
+          <strong style={{ color: "#fff" }}>{t.name}</strong> — {t.role}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
 {/* WHY VD FOKUS */}
 <div
   style={{
