@@ -37,7 +37,8 @@ export default function Page() {
   }}
 />
       {/* NAVBAR */}
-      <div
+ {/* NAVBAR */}
+<div
   style={{
     padding: "16px 40px",
     display: "flex",
@@ -48,12 +49,13 @@ export default function Page() {
     backdropFilter: "blur(12px)",
     borderBottom: "1px solid rgba(255,255,255,0.08)",
 
-    // 🔥 THIS MAKES IT STICK
-    position: "sticky",
+    // 🔥 FIXED NAVBAR
+    position: "fixed",
     top: 0,
+    left: 0,
+    width: "100%",
     zIndex: 1000
   }}
-
 >
   <Image
     src="/logo.png"
