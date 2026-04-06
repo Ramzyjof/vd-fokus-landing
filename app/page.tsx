@@ -44,15 +44,9 @@ export default function Page() {
     justifyContent: "flex-end",
     alignItems: "center",
 
-    background: "rgba(15,23,42,0.8)",
+    background: "rgba(255,255,255,0.05)",
     backdropFilter: "blur(12px)",
-    borderBottom: "1px solid rgba(255,255,255,0.08)",
-
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100%",
-    zIndex: 9999
+    borderBottom: "1px solid rgba(255,255,255,0.08)"
   }}
 >
   <Image
@@ -64,8 +58,6 @@ export default function Page() {
       filter: "drop-shadow(0 0 10px rgba(255,255,255,0.2))"
     }}
   />
-  {/* SPACING (IMPORTANT) */}
-  <div style={{ height: "80px" }} />
 </div>
       {/* HERO */}
       <section
