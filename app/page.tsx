@@ -184,7 +184,7 @@ export default function Page() {
   </div>
 
   <p style={{ color: "#facc15", fontSize: "14px", marginBottom: "20px" }}>
-    🚀 Launch Offer — Limited to 5 Clients
+    🚀 Launch Offer — Only 5 slots available
   </p>
 
   <div
@@ -199,7 +199,7 @@ export default function Page() {
     "CV Optimization",
     "Interview Preparation",
     "Mock Interview",
-    "🎁 Free additional Interview Preparation after your first interview",
+    "🎁 Get a free follow-up interview preparation session when you land your first interview",
     "⏱ Optional extension: +IDR 100K / hour"
   ].map((item, i) => (
     <div
