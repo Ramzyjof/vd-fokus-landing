@@ -21,7 +21,15 @@ export default function Page() {
         color: "#fff",
         minHeight: "100vh"
       }}
-    >
+    ><style>
+{`
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(34,197,94, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(34,197,94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94, 0); }
+}
+`}
+</style>
       {/* NAVBAR */}
       <div style={{ padding: "24px 40px" }}>
         <Image src="/logo.png" alt="VD Fokus" width={120} height={40} />
@@ -82,7 +90,30 @@ export default function Page() {
             <li>❌ Weak communication & body language</li>
           </ul>
         </div>
+{/* WHY VD FOKUS */}
+<div
+  style={{
+    marginBottom: "60px",
+    opacity: visible ? 1 : 0,
+    transform: visible ? "translateY(0)" : "translateY(60px)",
+    transition: "all 1s ease 0.3s"
+  }}
+>
+  <h2 style={{ fontSize: "22px", marginBottom: "12px" }}>
+    Why VD Fokus?
+  </h2>
 
+  <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
+    We know what hiring managers actually look for — because we’ve been on the other side.
+  </p>
+
+  <ul style={{ lineHeight: "2", color: "#e2e8f0" }}>
+    <li>✅ 20+ years of Executive Search experience</li>
+    <li>✅ Direct insight into hiring decisions</li>
+    <li>✅ Proven strategies to get shortlisted</li>
+    <li>✅ Focused on real outcomes: interviews & offers</li>
+  </ul>
+</div>
        {/* PACKAGE */}
 <div
   style={{
@@ -159,20 +190,31 @@ export default function Page() {
 
   {/* BUTTON */}
   <a
-    href="https://wa.me/6281212940797?text=Hi%20VD%20Fokus,%20I%20want%20to%20book%20the%20CV%20and%20Interview%20Package"
-    style={{
-      display: "inline-block",
-      marginTop: "20px",
-      padding: "14px 28px",
-      borderRadius: "999px",
-      background: "#22c55e",
-      color: "#fff",
-      textDecoration: "none",
-      fontWeight: 500
-    }}
-  >
-    Book via WhatsApp
-  </a>
+  href="https://wa.me/6281212940797?text=Hi%20VD%20Fokus,%20I%20want%20to%20book%20the%20CV%20and%20Interview%20Package"
+  style={{
+  display: "inline-block",
+  marginTop: "20px",
+  padding: "14px 28px",
+  borderRadius: "999px",
+  background: "#22c55e",
+  color: "#fff",
+  textDecoration: "none",
+  fontWeight: 500,
+  animation: "pulse 1.5s infinite"
+}}
+
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = "scale(1.08)";
+    e.currentTarget.style.boxShadow = "0 0 25px rgba(34,197,94,0.8)";
+  }}
+
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = "scale(1)";
+    e.currentTarget.style.boxShadow = "0 10px 20px rgba(34,197,94,0.3)";
+  }}
+>
+  Book via WhatsApp
+</a>
 </div>
       </div>
 
