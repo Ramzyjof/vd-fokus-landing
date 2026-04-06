@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-const [pressed, setPressed] = useState(false);
 
 export default function Page() {
   const [visible, setVisible] = useState(false);
+  const [pressed, setPressed] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
