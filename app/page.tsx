@@ -49,6 +49,7 @@ export default function Page() {
     borderBottom: "1px solid rgba(255,255,255,0.08)"
   }}
 >
+  <a href="https://vdfokus.co.id/" style={{ cursor: "pointer" }}>
   <Image
     src="/logo.png"
     alt="VD Fokus"
@@ -58,6 +59,7 @@ export default function Page() {
       filter: "drop-shadow(0 0 10px rgba(255,255,255,0.2))"
     }}
   />
+</a>
 </div>
       {/* HERO */}
       <section
