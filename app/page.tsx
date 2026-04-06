@@ -50,15 +50,31 @@ export default function Page() {
   }}
 >
   <a href="https://vdfokus.co.id/" style={{ cursor: "pointer" }}>
+  <a
+  href="https://vdfokus.co.id/"
+  style={{ display: "inline-block" }}
+>
   <Image
     src="/logo.png"
     alt="VD Fokus"
     width={120}
     height={40}
     style={{
-      filter: "drop-shadow(0 0 10px rgba(255,255,255,0.2))"
+      transition: "all 0.3s ease",
+      filter: "drop-shadow(0 0 8px rgba(255,255,255,0.2))"
+    }}
+
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = "translateY(-3px) scale(1.05)";
+      e.currentTarget.style.filter = "drop-shadow(0 0 16px rgba(255,255,255,0.5))";
+    }}
+
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = "translateY(0) scale(1)";
+      e.currentTarget.style.filter = "drop-shadow(0 0 8px rgba(255,255,255,0.2))";
     }}
   />
+</a>
 </a>
 </div>
       {/* HERO */}
