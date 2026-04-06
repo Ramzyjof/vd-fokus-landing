@@ -244,22 +244,6 @@ export default function Page() {
 </a>
 </div>
       </div>
-
-      {/* CTA */}
-      <div style={{ textAlign: "center", margin: "80px 0" }}>
-        <a
-          href="https://wa.me/6281212940797"
-          style={{
-            padding: "16px 36px",
-            borderRadius: "999px",
-            background: "#ffffff",
-            color: "#000",
-            fontSize: "16px"
-          }}
-        >
-          Get Started
-        </a>
-      </div>
     </main>
   );
 }
