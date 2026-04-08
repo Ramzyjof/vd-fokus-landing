@@ -300,7 +300,7 @@ export default function Page() {
   {[
     "CV Optimization",
     "Interview Preparation",
-    "Mock Interview",
+    "Mock Interview Session + Feedback",
     "🎁 Get a free follow-up interview preparation session when you land your first interview",
     "⏱ Optional extension: +IDR 100K / hour"
   ].map((item, i) => (
