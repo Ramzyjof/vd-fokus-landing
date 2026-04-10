@@ -368,7 +368,7 @@ useEffect(() => {
       key={i}
       style={{
         marginBottom: isMobile ? "14px" : "18px",
-        maxHeight: showDetails ? (isMobile ? "none" : "0px") : "0px",
+        maxHeight: showDetails ? (isMobile ? "1500px" : "1200px") : "0px",
         padding: isMobile ? "14px" : "16px",
         borderRadius: "12px",
         background: "rgba(255,255,255,0.04)",
