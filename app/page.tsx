@@ -394,9 +394,7 @@ export default function Page() {
     <div style={{ color: "#bbf7d0" }}>
       Higher chance of passing interviews and securing job offers.
     </div>
-  </div>
-</div>
-{/* SESSION DETAILS */}
+    {/* SESSION DETAILS */}
 <div
   style={{
     marginTop: "20px",
@@ -417,6 +415,9 @@ export default function Page() {
     • Online sessions are also available via Google Meet or Microsoft Teams.
   </div>
 </div>
+  </div>
+</div>
+
   {/* FEATURES */}
   {[
     "CV Optimization",
