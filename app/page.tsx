@@ -6,6 +6,7 @@ import Image from "next/image";
 export default function Page() {
   const [visible, setVisible] = useState(false);
   const [pressed, setPressed] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -295,6 +296,58 @@ export default function Page() {
       margin: "20px 0"
     }}
   />
+<button
+  onClick={() => setShowDetails(!showDetails)}
+  style={{
+    marginBottom: "20px",
+    padding: "10px 20px",
+    borderRadius: "999px",
+    background: "transparent",
+    border: "1px solid rgba(255,255,255,0.2)",
+    color: "#fff",
+    cursor: "pointer",
+    transition: "all 0.3s ease"
+  }}
+>
+  {showDetails ? "Hide Details" : "See Full Details"}
+</button>
+<div
+  style={{
+    maxHeight: showDetails ? "1000px" : "0px",
+    overflow: "hidden",
+    transition: "all 0.5s ease",
+    opacity: showDetails ? 1 : 0,
+    transform: showDetails ? "translateY(0)" : "translateY(-10px)"
+  }}
+>
+  {/* CONTENT */}
+  <div style={{ marginBottom: "20px" }}>
+    <h3 style={{ marginBottom: "8px" }}>Phase 1 — CV Strategy</h3>
+    <ul style={{ lineHeight: "1.8", color: "#cbd5f5" }}>
+      <li>✔ CV audit & restructuring</li>
+      <li>✔ Strong positioning</li>
+      <li>✔ ATS optimization</li>
+    </ul>
+  </div>
+
+  <div style={{ marginBottom: "20px" }}>
+    <h3 style={{ marginBottom: "8px" }}>Phase 2 — Interview Mastery</h3>
+    <ul style={{ lineHeight: "1.8", color: "#cbd5f5" }}>
+      <li>✔ Mock Interview Session</li>
+      <li>✔ Structured answer framework</li>
+      <li>✔ Real-time feedback</li>
+    </ul>
+  </div>
+
+  <div style={{ marginBottom: "20px" }}>
+    <h3 style={{ marginBottom: "8px" }}>Phase 3 — Support</h3>
+    <ul style={{ lineHeight: "1.8", color: "#cbd5f5" }}>
+      <li>✔ Free follow-up session after first interview</li>
+      <li>✔ Ongoing guidance</li>
+      <li>✔ Focus on real outcomes</li>
+    </ul>
+  </div>
+</div>
 
   {/* FEATURES */}
   {[
