@@ -398,7 +398,7 @@ export default function Page() {
    {/* SESSION DETAILS */}
 <div
   style={{
-    marginTop: "20px",
+    marginTop: "40px",
     padding: "18px",
     borderRadius: "14px",
     background: "rgba(255,255,255,0.05)",
