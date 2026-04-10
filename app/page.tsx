@@ -7,6 +7,18 @@ export default function Page() {
   const [visible, setVisible] = useState(false);
   const [pressed, setPressed] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  handleResize();
+  window.addEventListener("resize", handleResize);
+
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -88,7 +100,7 @@ export default function Page() {
           transition: "all 1s ease"
         }}
       >
-        <h1 style={{ fontSize: "48px", fontWeight: 600, letterSpacing: "-1px" }}>
+        <h1 style={{ fontSize: isMobile ? "20px" : "48px", fontWeight: 600, letterSpacing: "-1px" }}>
           Get Selected — Not Just Interviewed
         </h1>
 
@@ -111,7 +123,7 @@ export default function Page() {
         style={{
           maxWidth: "800px",
           margin: "auto",
-          padding: "40px 20px",
+          padding: isMobile ? "20px 16px" : "40px 20px",
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(60px)",
           transition: "all 1s ease 0.2s"
@@ -221,7 +233,7 @@ export default function Page() {
 <div
   tabIndex={0}
   style={{
-    padding: "32px",
+    padding: isMobile ? "20px" : "32px",
     borderRadius: "20px",
     background: "rgba(255,255,255,0.06)",
     border: "1px solid rgba(255,255,255,0.1)",
@@ -355,8 +367,9 @@ export default function Page() {
     <div
       key={i}
       style={{
-        marginBottom: "18px",
-        padding: "16px",
+        marginBottom: isMobile ? "14px" : "18px",
+        maxHeight: showDetails ? (isMobile ? "1500px" : "1200px") : "0px",
+        padding: isMobile ? "14px" : "16px",
         borderRadius: "12px",
         background: "rgba(255,255,255,0.04)",
         border: "1px solid rgba(255,255,255,0.08)",
@@ -446,7 +459,9 @@ export default function Page() {
   style={{
   display: "inline-block",
   marginTop: "20px",
-  padding: "14px 28px",
+  padding: isMobile ? "12px 20px" : "10px 20px",
+width: isMobile ? "100%" : "auto",
+textAlign: "center",
   borderRadius: "999px",
   background: "#22c55e",
   color: "#fff",
