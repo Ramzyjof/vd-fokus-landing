@@ -100,7 +100,7 @@ useEffect(() => {
           transition: "all 1s ease"
         }}
       >
-        <h1 style={{ fontSize: isMobile ? "20px" : "48px", fontWeight: 600, letterSpacing: "-1px" }}>
+        <h1 style={{ fontSize: isMobile ? "30px" : "48px", fontWeight: 600, letterSpacing: "-1px" }}>
           Get Selected — Not Just Interviewed
         </h1>
 
@@ -325,7 +325,7 @@ useEffect(() => {
 </button>
 <div
   style={{
-    maxHeight: showDetails ? "1000px" : "0px",
+    maxHeight: showDetails ? "none" : "0px",
     overflow: "hidden",
     transition: "all 0.5s ease",
     opacity: showDetails ? 1 : 0,
@@ -368,7 +368,7 @@ useEffect(() => {
       key={i}
       style={{
         marginBottom: isMobile ? "14px" : "18px",
-        maxHeight: showDetails ? (isMobile ? "1500px" : "1200px") : "0px",
+        maxHeight: showDetails ? (isMobile ? "none" : "0px") : "0px",
         padding: isMobile ? "14px" : "16px",
         borderRadius: "12px",
         background: "rgba(255,255,255,0.04)",
