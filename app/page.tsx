@@ -52,9 +52,9 @@ useEffect(() => {
  {/* NAVBAR */}
 <div
   style={{
-    padding: "16px 40px",
+    padding: isMobile ? "12px 16px" : "16px 40px",
     display: "flex",
-    justifyContent: "flex-end",
+    justifyContent: isMobile ? "center" : "flex-end",
     alignItems: "center",
 
     background: "rgba(255,255,255,0.05)",
@@ -70,8 +70,8 @@ useEffect(() => {
   <Image
     src="/logo.png"
     alt="VD Fokus"
-    width={120}
-    height={40}
+    width={isMobile ? 90 : 120}
+    height={isMobile ? 30 : 40}
     style={{
       transition: "all 0.3s ease",
       filter: "drop-shadow(0 0 8px rgba(255,255,255,0.2))"
