@@ -320,35 +320,103 @@ export default function Page() {
     transform: showDetails ? "translateY(0)" : "translateY(-10px)"
   }}
 >
-  {/* CONTENT */}
-  <div style={{ marginBottom: "20px" }}>
-    <h3 style={{ marginBottom: "8px" }}>Phase 1 — CV Strategy</h3>
-    <ul style={{ lineHeight: "1.8", color: "#cbd5f5" }}>
-      <li>✔ CV audit & restructuring</li>
-      <li>✔ Strong positioning</li>
-      <li>✔ ATS optimization</li>
-    </ul>
-  </div>
+  {/* DROPDOWN DETAIL */}
+  <p style={{ color: "#94a3b8", marginBottom: "20px" }}>
+    What you will gain from this session:
+  </p>
 
-  <div style={{ marginBottom: "20px" }}>
-    <h3 style={{ marginBottom: "8px" }}>Phase 2 — Interview Mastery</h3>
-    <ul style={{ lineHeight: "1.8", color: "#cbd5f5" }}>
-      <li>✔ Mock Interview Session</li>
-      <li>✔ Structured answer framework</li>
-      <li>✔ Real-time feedback</li>
-    </ul>
-  </div>
+  {/* ITEM */}
+  {[
+    {
+      title: "Clarity on What Interviewers Want",
+      desc: "Understand how hiring managers evaluate candidates and what makes them select or reject."
+    },
+    {
+      title: "Structured Answer Framework",
+      desc: "Learn how to answer questions clearly, professionally, and with strong impact."
+    },
+    {
+      title: "Realistic Mock Interview",
+      desc: "Practice in a real interview simulation so you’re fully prepared for the actual situation."
+    },
+    {
+      title: "Personalized Feedback",
+      desc: "Get direct, actionable feedback on what to improve and how to fix it immediately."
+    },
+    {
+      title: "Confidence & Communication Upgrade",
+      desc: "Improve how you speak, present yourself, and handle pressure during interviews."
+    },
+    {
+      title: "Real Interview Readiness",
+      desc: "Walk into interviews with clarity, confidence, and a much higher chance of success."
+    }
+  ].map((item, i) => (
+    <div
+      key={i}
+      style={{
+        marginBottom: "18px",
+        padding: "16px",
+        borderRadius: "12px",
+        background: "rgba(255,255,255,0.04)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        transition: "all 0.3s ease"
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.background = "rgba(255,255,255,0.08)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.background = "rgba(255,255,255,0.04)";
+      }}
+    >
+      <div style={{ fontWeight: 600, marginBottom: "6px" }}>
+        {item.title}
+      </div>
+      <div style={{ color: "#94a3b8", fontSize: "14px" }}>
+        {item.desc}
+      </div>
+    </div>
+  ))}
 
-  <div style={{ marginBottom: "20px" }}>
-    <h3 style={{ marginBottom: "8px" }}>Phase 3 — Support</h3>
-    <ul style={{ lineHeight: "1.8", color: "#cbd5f5" }}>
-      <li>✔ Free follow-up session after first interview</li>
-      <li>✔ Ongoing guidance</li>
-      <li>✔ Focus on real outcomes</li>
-    </ul>
+  {/* OUTCOME BOX */}
+  <div
+    style={{
+      marginTop: "20px",
+      padding: "18px",
+      borderRadius: "14px",
+      background: "rgba(34,197,94,0.1)",
+      border: "1px solid rgba(34,197,94,0.3)"
+    }}
+  >
+    <div style={{ fontWeight: 600, marginBottom: "6px" }}>
+      🎯 Final Outcome
+    </div>
+    <div style={{ color: "#bbf7d0" }}>
+      Higher chance of passing interviews and securing job offers.
+    </div>
   </div>
 </div>
+{/* SESSION DETAILS */}
+<div
+  style={{
+    marginTop: "20px",
+    padding: "18px",
+    borderRadius: "14px",
+    background: "rgba(255,255,255,0.05)",
+    border: "1px solid rgba(255,255,255,0.1)"
+  }}
+>
+  <div style={{ fontWeight: 600, marginBottom: "10px" }}>
+    📌 Session Details
+  </div>
 
+  <div style={{ color: "#cbd5f5", lineHeight: "1.8", fontSize: "14px" }}>
+    • Each session is designed as a focused 90-minute deep-dive to maximize results.<br />
+    • Additional time can be arranged if needed (+IDR 100K per hour).<br />
+    • We recommend conducting the session in person at our office for maximum results.<br />
+    • Online sessions are also available via Google Meet or Microsoft Teams.
+  </div>
+</div>
   {/* FEATURES */}
   {[
     "CV Optimization",
