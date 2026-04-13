@@ -471,7 +471,7 @@ useEffect(() => {
 
   {/* BUTTON */}
   <a
-  href="https://wa.me/6281212940797?text=Hi%20VD%20Fokus,%20I%20want%20to%20book%20the%20CV%20and%20Interview%20Package"
+  href="https://wa.me/6285121305329?text=Hi%20VD%20Fokus,%20I'm%20interested%20in%20your%20Career%20Acceleration%20Service.%20Can%20you%20guide%20me?"
   style={{
   display: "inline-block",
   marginTop: "20px",
