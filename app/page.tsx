@@ -94,13 +94,13 @@ useEffect(() => {
       <section
         style={{
           textAlign: "center",
-          padding: "80px 20px",
+          padding: isMobile ? "50px 16px" :"80px 20px",
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(40px)",
           transition: "all 1s ease"
         }}
       >
-        <h1 style={{ fontSize: isMobile ? "30px" : "48px", fontWeight: 600, letterSpacing: "-1px" }}>
+        <h1 style={{ fontSize: isMobile ? "26px" : "48px", fontWeight: 600, letterSpacing: "-1px" }}>
           Get Selected — Not Just Interviewed
         </h1>
 
@@ -228,6 +228,22 @@ useEffect(() => {
       </div>
     ))}
   </div>
+</div>
+<div style={{ marginBottom: "60px" }}>
+  <h2 style={{ fontSize: "22px", marginBottom: "16px" }}>
+    How It Works
+  </h2>
+
+  {[
+    "Book via WhatsApp",
+    "Fill short form",
+    "Join session & improve"
+  ].map((step, i) => (
+    <div key={i} style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
+      <span>👉</span>
+      <span>{step}</span>
+    </div>
+  ))}
 </div>
        {/* PACKAGE */}
 <div
