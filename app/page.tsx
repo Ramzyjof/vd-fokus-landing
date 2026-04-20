@@ -498,6 +498,7 @@ textAlign: "center",
 >
   Book via WhatsApp
 </a>
+</div>
 <section
   id="cas-contact"
   style={{
@@ -538,8 +539,6 @@ textAlign: "center",
     />
   </div>
 </section>
-
-</div>
       </div>
     </main>
   );
