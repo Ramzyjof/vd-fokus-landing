@@ -28,27 +28,40 @@ useEffect(() => {
 
   return (
     <main
-      style={{
-        fontFamily: "Inter, sans-serif",
-        background: "radial-gradient(circle at top, #1e293b, #0f172a)",
-        color: "#fff",
-        minHeight: "100vh"
-      }}
-    ><style>
-{`
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(34,197,94, 0.6); }
-  70% { box-shadow: 0 0 0 15px rgba(34,197,94, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(34,197,94, 0); }
-}
-`}
-</style>
+  style={{
+    position: "relative", // 🔥 added
+    overflow: "hidden",   // 🔥 added
+    fontFamily: "Inter, sans-serif",
+    background: "radial-gradient(circle at top, #1e293b, #0f172a)",
+    color: "#fff",
+    minHeight: "100vh"
+  }}
+>
+
+{/* 🔴 RED ACCENT BACKGROUND */}
 <div
   style={{
-    borderBottom: "1px solid rgba(255,255,255,0.08)",
-    marginBottom: "20px"
+    position: "absolute",
+    inset: 0,
+    background: `
+      radial-gradient(circle at 20% 30%, rgba(127,29,29,0.25), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(127,29,29,0.2), transparent 40%)
+    `,
+    zIndex: 0,
+    pointerEvents: "none"
   }}
 />
+
+{/* 🔥 WRAP ALL YOUR EXISTING CONTENT */}
+<div style={{ position: "relative", zIndex: 1 }}>
+
+  <div
+    style={{
+      borderBottom: "1px solid rgba(255,255,255,0.08)",
+      marginBottom: "20px"
+    }}
+  ></div>
+  
  {/* NAVBAR */}
 <div
   style={{
@@ -604,7 +617,8 @@ textAlign: "center",
 
   </div>
 </section>
+      </div> 
       </div>
-    </main>
+</main>
   );
 }
