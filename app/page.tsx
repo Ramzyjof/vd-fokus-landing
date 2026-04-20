@@ -503,60 +503,105 @@ textAlign: "center",
   id="cas-contact"
   style={{
     padding: "100px 20px",
-    background: "#111827",
-    borderTop: "1px solid rgba(127,29,29,0.2)",
+    background: "rgba(255,255,255,0.02)",
+    borderTop: "1px solid rgba(255,255,255,0.06)",
     textAlign: "center"
   }}
 >
-  <h2
-  style={{
-    fontSize: "36px",
-    fontWeight: 600,
-    color: "#e5e7eb",
-    marginBottom: "12px"
-  }}
->
-  Visit Us
-</h2>
+  <div style={{ maxWidth: "700px", margin: "0 auto" }}>
+    
+    {/* TITLE */}
+    <h2
+      style={{
+        fontSize: "36px",
+        fontWeight: 600,
+        color: "#e5e7eb",
+        marginBottom: "10px"
+      }}
+    >
+      Visit Us
+    </h2>
 
-<p
-  style={{
-    fontSize: "16px",
-    color: "#94a3b8",
-    marginBottom: "8px"
-  }}
->
-  PT Vera Diana Fokus
-</p>
+    {/* SUBTITLE */}
+    <p
+      style={{
+        color: "#94a3b8",
+        marginBottom: "40px",
+        fontSize: "16px"
+      }}
+    >
+      Come visit our office in West Java
+    </p>
 
-<p
-  style={{
-    fontSize: "16px",
-    color: "#94a3b8",
-    marginBottom: "30px",
-    lineHeight: "1.6"
-  }}
->
-  Jl. Raya Bogor KM 30, Cimanggis, Depok, West Java, Indonesia
-</p>
+    {/* COMPANY */}
+    <p
+      style={{
+        fontSize: "16px",
+        color: "#e5e7eb",
+        marginBottom: "6px",
+        fontWeight: 500
+      }}
+    >
+      PT Vera Diana Fokus
+    </p>
 
-  {/* MAP */}
-  <div
-    style={{
-      maxWidth: "800px",
-      margin: "auto",
-      borderRadius: "16px",
-      overflow: "hidden",
-      border: "1px solid rgba(127,29,29,0.3)"
-    }}
-  >
-    <iframe
-      src="https://www.google.com/maps?q=-6.3836475,106.9248334&z=15&output=embed"
-      width="100%"
-      height="350"
-      style={{ border: 0 }}
-      loading="lazy"
-    />
+    {/* ADDRESS */}
+    <p
+      style={{
+        fontSize: "15px",
+        color: "#94a3b8",
+        marginBottom: "30px",
+        lineHeight: "1.6"
+      }}
+    >
+      Jl. Raya Bogor KM 30, Cimanggis, Depok, West Java, Indonesia
+    </p>
+
+    {/* GET DIRECTIONS BUTTON */}
+    <a
+      href="https://www.google.com/maps?q=-6.3836475,106.9248334"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: "inline-block",
+        marginBottom: "40px",
+        padding: "12px 24px",
+        borderRadius: "999px",
+        background: "linear-gradient(135deg, #7f1d1d, #991b1b)",
+        color: "#fff",
+        fontSize: "14px",
+        fontWeight: 500,
+        textDecoration: "none",
+        boxShadow: "0 0 20px rgba(127,29,29,0.4)",
+        transition: "all 0.3s ease"
+      }}
+      onMouseOver={(e) =>
+        (e.currentTarget.style.transform = "scale(1.05)")
+      }
+      onMouseOut={(e) =>
+        (e.currentTarget.style.transform = "scale(1)")
+      }
+    >
+      Get Directions →
+    </a>
+
+    {/* GOOGLE MAP */}
+    <div
+      style={{
+        borderRadius: "16px",
+        overflow: "hidden",
+        border: "1px solid rgba(255,255,255,0.08)"
+      }}
+    >
+      <iframe
+        src="https://www.google.com/maps?q=-6.3836475,106.9248334&z=15&output=embed"
+        width="100%"
+        height="350"
+        style={{ border: 0 }}
+        loading="lazy"
+      />
+    </div>
+
   </div>
 </section>
       </div>
