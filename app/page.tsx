@@ -498,6 +498,47 @@ textAlign: "center",
 >
   Book via WhatsApp
 </a>
+<section
+  id="cas-contact"
+  style={{
+    padding: "100px 20px",
+    background: "#111827",
+    borderTop: "1px solid rgba(127,29,29,0.2)",
+    textAlign: "center"
+  }}
+>
+  <h2 style={{ marginBottom: "10px" }}>
+    Visit Us
+  </h2>
+
+  <p style={{ color: "#94a3b8", marginBottom: "30px" }}>
+    PT Vera Diana Fokus
+  </p>
+
+  <p style={{ color: "#94a3b8", marginBottom: "40px" }}>
+    Jl. Raya Bogor KM 30, Cimanggis, Depok, West Java, Indonesia
+  </p>
+
+  {/* MAP */}
+  <div
+    style={{
+      maxWidth: "800px",
+      margin: "auto",
+      borderRadius: "16px",
+      overflow: "hidden",
+      border: "1px solid rgba(127,29,29,0.3)"
+    }}
+  >
+    <iframe
+      src="https://www.google.com/maps?q=-6.3836475,106.9248334&z=15&output=embed"
+      width="100%"
+      height="350"
+      style={{ border: 0 }}
+      loading="lazy"
+    />
+  </div>
+</section>
+
 </div>
       </div>
     </main>

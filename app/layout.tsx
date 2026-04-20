@@ -1,14 +1,14 @@
 import "./globals.css";
 
 export const metadata = {
+  metadataBase: new URL("https://vd-fokus-interview-preparation-wioa.vercel.app"),
+
   title: "VD Fokus — Career Acceleration Service",
-  description:
-    "We help professionals pass HR screening and interviews using real hiring insights.",
+  description: "Get shortlisted, perform confidently, and land the job.",
 
   openGraph: {
-    title: "VD Fokus — Career Acceleration Service",
-    description:
-      "Get shortlisted, perform confidently, and land the job.",
+    title: "Get Selected — Not Just Interviewed",
+    description: "We help professionals pass HR screening and interviews using real hiring insights.",
     url: "https://vd-fokus-interview-preparation-wioa.vercel.app",
     siteName: "VD Fokus",
     images: [
@@ -18,8 +18,14 @@ export const metadata = {
         height: 630,
       },
     ],
-    locale: "en_US",
     type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Get Selected — Not Just Interviewed",
+    description: "Land more interviews and perform confidently.",
+    images: ["/og-image.png"],
   },
 };
 
