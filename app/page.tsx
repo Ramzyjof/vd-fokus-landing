@@ -127,7 +127,8 @@ useEffect(() => {
         style={{
           width: "60%",
           margin: "0 auto 40px",
-          borderTop: "1px solid rgba(255,255,255,0.1)"
+          borderTop: "1px solid rgba(127,29,29,0.2)",
+          borderBottom: "1px solid rgba(127,29,29,0.2)"
         }}
       />
 
@@ -218,18 +219,18 @@ useEffect(() => {
         style={{
           padding: "20px",
           borderRadius: "16px",
-          background: "rgba(255,255,255,0.04)",
-          border: "1px solid rgba(255,255,255,0.08)",
+          background: "#1F2937",
+          border: "1px solid rgba(127,29,29,0.25)",
           transition: "all 0.3s ease"
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.transform = "translateY(-5px)";
-          e.currentTarget.style.background = "rgba(255,255,255,0.08)";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = "translateY(0)";
-          e.currentTarget.style.background = "rgba(255,255,255,0.04)";
-        }}
+  e.currentTarget.style.transform = "translateY(-5px)";
+  e.currentTarget.style.background = "#2A1A1A";
+}}
+onMouseLeave={(e) => {
+  e.currentTarget.style.transform = "translateY(0)";
+  e.currentTarget.style.background = "#1F2937";
+}}
       >
         <p style={{ color: "#e2e8f0", marginBottom: "12px", lineHeight: "1.6" }}>
           “{t.text}”
@@ -333,7 +334,8 @@ useEffect(() => {
 
   <div
     style={{
-      borderTop: "1px solid rgba(255,255,255,0.1)",
+      borderTop: "1px solid rgba(127,29,29,0.2)",
+      borderBottom: "1px solid rgba(127,29,29,0.2)",
       margin: "20px 0"
     }}
   />
@@ -400,8 +402,8 @@ useEffect(() => {
         maxHeight: showDetails ? (isMobile ? "1500px" : "1200px") : "0px",
         padding: isMobile ? "14px" : "16px",
         borderRadius: "12px",
-        background: "rgba(255,255,255,0.04)",
-        border: "1px solid rgba(255,255,255,0.08)",
+        background: "#1F2937",
+        border: "1px solid rgba(127,29,29,0.25)",
         transition: "all 0.3s ease"
       }}
       onMouseEnter={(e) => {
@@ -492,22 +494,27 @@ useEffect(() => {
 width: isMobile ? "100%" : "auto",
 textAlign: "center",
   borderRadius: "999px",
-  background: "#22c55e",
+  background: "#3B82F6",
+  border: "1px solid #7F1D1D",
   color: "#fff",
   textDecoration: "none",
   fontWeight: 500,
   animation: "pulse 1.5s"
+  
 }}
 
   onMouseEnter={(e) => {
     e.currentTarget.style.transform = "scale(1.08)";
     e.currentTarget.style.boxShadow = "0 0 25px rgba(34,197,94,0.8)";
+    e.currentTarget.style.background = "#7F1D1D";
   }}
 
   onMouseLeave={(e) => {
     e.currentTarget.style.transform = "scale(1)";
     e.currentTarget.style.boxShadow = "0 10px 20px rgba(34,197,94,0.3)";
+    e.currentTarget.style.background = "#3B82F6";
   }}
+  
 >
   Book via WhatsApp
 </a>
@@ -517,7 +524,8 @@ textAlign: "center",
   style={{
     padding: "100px 20px",
     background: "rgba(255,255,255,0.02)",
-    borderTop: "1px solid rgba(255,255,255,0.06)",
+    borderTop: "1px solid rgba(127,29,29,0.2)",
+    borderBottom: "1px solid rgba(127,29,29,0.2)",
     textAlign: "center"
   }}
 >
@@ -580,7 +588,8 @@ textAlign: "center",
         marginBottom: "40px",
         padding: "12px 24px",
         borderRadius: "999px",
-        background: "linear-gradient(135deg, #7f1d1d, #991b1b)",
+        background: "#3B82F6",
+        border: "1px solid #7F1D1D",
         color: "#fff",
         fontSize: "14px",
         fontWeight: 500,
@@ -603,7 +612,7 @@ textAlign: "center",
       style={{
         borderRadius: "16px",
         overflow: "hidden",
-        border: "1px solid rgba(255,255,255,0.08)"
+        border: "1px solid rgba(127,29,29,0.25)"
       }}
     >
       <iframe
