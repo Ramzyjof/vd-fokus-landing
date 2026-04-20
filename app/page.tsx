@@ -508,17 +508,37 @@ textAlign: "center",
     textAlign: "center"
   }}
 >
-  <h2 style={{ marginBottom: "10px" }}>
-    Visit Us
-  </h2>
+  <h2
+  style={{
+    fontSize: "36px",
+    fontWeight: 600,
+    color: "#e5e7eb",
+    marginBottom: "12px"
+  }}
+>
+  Visit Us
+</h2>
 
-  <p style={{ color: "#94a3b8", marginBottom: "30px" }}>
-    PT Vera Diana Fokus
-  </p>
+<p
+  style={{
+    fontSize: "16px",
+    color: "#94a3b8",
+    marginBottom: "8px"
+  }}
+>
+  PT Vera Diana Fokus
+</p>
 
-  <p style={{ color: "#94a3b8", marginBottom: "40px" }}>
-    Jl. Raya Bogor KM 30, Cimanggis, Depok, West Java, Indonesia
-  </p>
+<p
+  style={{
+    fontSize: "16px",
+    color: "#94a3b8",
+    marginBottom: "30px",
+    lineHeight: "1.6"
+  }}
+>
+  Jl. Raya Bogor KM 30, Cimanggis, Depok, West Java, Indonesia
+</p>
 
   {/* MAP */}
   <div
