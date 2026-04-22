@@ -8,6 +8,28 @@ export default function Page() {
   const [pressed, setPressed] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuItems: { name: string; id: string }[] = [
+  { name: "Home", id: "cas-hero" },
+  { name: "Problem", id: "cas-problem" },
+  { name: "Why Us", id: "cas-why" },
+  { name: "Process", id: "cas-process" },
+  { name: "Package", id: "cas-package" },
+  { name: "Visit", id: "cas-visit" }
+];
+
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) {
+    const yOffset = -100;
+    const y =
+      el.getBoundingClientRect().top +
+      window.pageYOffset +
+      yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+};
 
 useEffect(() => {
   const handleResize = () => {
@@ -57,7 +79,7 @@ useEffect(() => {
     backdropFilter: "blur(10px)",
     borderBottom: "1px solid rgba(127,29,29,0.2)",
     transition: "all 0.3s ease",
-    padding: scrolled ? "10px 0" : "18px 0"
+    padding: scrolled ? "10px 0" : "16px 0"
   }}
 >
   <div
@@ -66,65 +88,77 @@ useEffect(() => {
       margin: "auto",
       padding: "0 20px",
       display: "flex",
-      justifyContent: "space-between", // 🔥 KEY FIX
+      justifyContent: "space-between",
       alignItems: "center"
     }}
   >
-    {/* LOGO LEFT */}
+    {/* LOGO */}
     <div style={{ fontWeight: 600 }}>
       VD Fokus
     </div>
 
-    {/* MENU RIGHT */}
+    {/* DESKTOP MENU */}
     <nav
       style={{
-        display: "flex",
+        display: isMobile ? "none" : "flex",
         gap: "18px",
-        fontSize: scrolled ? "13px" : "14px",
-        transition: "0.3s"
+        fontSize: scrolled ? "13px" : "14px"
       }}
     >
-      {[
-        { name: "Home", id: "cas-hero" },
-        { name: "Problem", id: "cas-problem" },
-        { name: "Why Us", id: "cas-why" },
-        { name: "Process", id: "cas-process" },
-        { name: "Package", id: "cas-package" },
-        { name: "Visit", id: "cas-visit" }
-      ].map((item, i) => (
+      {menuItems.map((item, i) => (
         <span
           key={i}
-          onClick={() => {
-            const el = document.getElementById(item.id);
-            if (el) {
-              const yOffset = -100;
-              const y =
-                el.getBoundingClientRect().top +
-                window.pageYOffset +
-                yOffset;
-
-              window.scrollTo({ top: y, behavior: "smooth" });
-            }
-          }}
-          style={{
-            cursor: "pointer",
-            color: "#94a3b8",
-            transition: "0.3s"
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = "#F1F5F9";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = "#94a3b8";
-          }}
+          onClick={() => scrollToSection(item.id)}
+          style={{ cursor: "pointer", color: "#94a3b8" }}
         >
           {item.name}
         </span>
       ))}
     </nav>
+
+    {/* HAMBURGER */}
+    <div
+      onClick={() => setMenuOpen(!menuOpen)}
+      style={{
+        display: isMobile ? "block" : "none",
+        cursor: "pointer",
+        fontSize: "20px"
+      }}
+    >
+      ☰
+    </div>
   </div>
 
-  {/* RED LINE */}
+  {/* MOBILE DROPDOWN */}
+  <div
+    style={{
+      maxHeight: menuOpen ? "300px" : "0px",
+      overflow: "hidden",
+      transition: "all 0.3s ease",
+      background: "rgba(11,18,32,0.98)",
+      borderTop: "1px solid rgba(127,29,29,0.2)"
+    }}
+  >
+    {menuItems.map((item, i) => (
+      <div
+        key={i}
+        onClick={() => {
+          scrollToSection(item.id);
+          setMenuOpen(false);
+        }}
+        style={{
+          padding: "14px 20px",
+          borderBottom: "1px solid rgba(255,255,255,0.05)",
+          cursor: "pointer",
+          color: "#94a3b8"
+        }}
+      >
+        {item.name}
+      </div>
+    ))}
+  </div>
+
+  {/* RED ACCENT */}
   <div
     style={{
       height: "2px",
