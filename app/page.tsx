@@ -37,6 +37,73 @@ useEffect(() => {
     minHeight: "100vh"
   }}
 >
+<header
+  style={{
+    position: "sticky",
+    top: 0,
+    zIndex: 1000,
+    background: "rgba(11,18,32,0.9)",
+    backdropFilter: "blur(10px)",
+    borderBottom: "1px solid rgba(127,29,29,0.2)"
+  }}
+>
+  <div
+    style={{
+      maxWidth: "1100px",
+      margin: "auto",
+      padding: "14px 20px",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center"
+    }}
+  >
+    {/* LOGO */}
+    <div style={{ fontWeight: 600 }}>VD Fokus</div>
+
+    {/* MENU */}
+    <nav style={{ display: "flex", gap: "24px" }}>
+      {[
+        { name: "Home", id: "cas-hero" },
+        { name: "Problem", id: "cas-problem" },
+        { name: "Why Us", id: "cas-why" },
+        { name: "Process", id: "cas-process" },
+        { name: "Package", id: "cas-package" },
+        { name: "Visit", id: "cas-visit" }
+      ].map((item, i) => (
+        <span
+          key={i}
+          onClick={() => {
+            document
+              .getElementById(item.id)
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
+          style={{
+            cursor: "pointer",
+            color: "#94a3b8",
+            transition: "0.3s"
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.color = "#F1F5F9";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.color = "#94a3b8";
+          }}
+        >
+          {item.name}
+        </span>
+      ))}
+    </nav>
+  </div>
+
+  {/* RED ACCENT LINE */}
+  <div
+    style={{
+      height: "2px",
+      background: "linear-gradient(to right, transparent, #7F1D1D, transparent)",
+      opacity: 0.6
+    }}
+  />
+</header>
 
 {/* 🔴 RED ACCENT BACKGROUND */}
 <div
@@ -104,13 +171,14 @@ useEffect(() => {
 </a>
 </div>
       {/* HERO */}
-      <section
+      <section id="cas-hero"
         style={{
           textAlign: "center",
           padding: isMobile ? "50px 16px" :"80px 20px",
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(40px)",
-          transition: "all 1s ease"
+          transition: "all 1s ease",
+          scrollMarginTop: "100px"
         }}
       >
         <h1 style={{ fontSize: isMobile ? "26px" : "48px", fontWeight: 600, letterSpacing: "-1px" }}>
@@ -144,8 +212,8 @@ useEffect(() => {
         }}
       >
         {/* WHY FAIL */}
-        <div style={{ marginBottom: "50px" }}>
-          <h2 style={{ fontSize: "22px", marginBottom: "12px" }}>
+        <div id="cas-hero" style={{ marginBottom: "50px" }}>
+          <h2 style={{ fontSize: "22px", marginBottom: "12px", scrollMarginTop: "100px" }}>
             Why You Keep Failing Interviews
           </h2>
 
@@ -161,12 +229,13 @@ useEffect(() => {
         </div>
         
 {/* WHY VD FOKUS */}
-<div
+<div id="cas-why"
   style={{
     marginBottom: "60px",
     opacity: visible ? 1 : 0,
     transform: visible ? "translateY(0)" : "translateY(60px)",
-    transition: "all 1s ease 0.3s"
+    transition: "all 1s ease 0.3s",
+    scrollMarginTop: "100px"
   }}
 >
   <h2 style={{ fontSize: "22px", marginBottom: "12px" }}>
@@ -185,8 +254,8 @@ useEffect(() => {
   </ul>
 </div>
 {/* TESTIMONIALS */}
-<div style={{ marginBottom: "60px" }}>
-  <h2 style={{ fontSize: "22px", marginBottom: "20px" }}>
+<div id="cas-testimonials" style={{ marginBottom: "60px" }}>
+  <h2 style={{ fontSize: "22px", marginBottom: "20px", scrollMarginTop: "100px" }}>
     What Professionals Say
   </h2>
 
@@ -243,8 +312,8 @@ onMouseLeave={(e) => {
     ))}
   </div>
 </div>
-<div style={{ marginBottom: "60px" }}>
-  <h2 style={{ fontSize: "22px", marginBottom: "16px" }}>
+<div id="cas-process" style={{ marginBottom: "60px" }}>
+  <h2  style={{ fontSize: "22px", marginBottom: "16px",scrollMarginTop: "100px" }}>
     How It Works
   </h2>
 
@@ -260,7 +329,7 @@ onMouseLeave={(e) => {
   ))}
 </div>
        {/* PACKAGE */}
-<div
+<div id="cas-package"
   tabIndex={0}
   style={{
     padding: isMobile ? "20px" : "32px",
@@ -271,7 +340,8 @@ onMouseLeave={(e) => {
     transition: "all 0.3s ease",
     outline: "none",
     marginTop: "40px",
-    boxShadow: "0 30px 80px rgba(0,0,0,0.6)"
+    boxShadow: "0 30px 80px rgba(0,0,0,0.6)",
+    scrollMarginTop: "100px"
   }}
 
   // 🖱 HOVER
@@ -526,7 +596,8 @@ textAlign: "center",
     background: "rgba(255,255,255,0.02)",
     borderTop: "1px solid rgba(127,29,29,0.2)",
     borderBottom: "1px solid rgba(127,29,29,0.2)",
-    textAlign: "center"
+    textAlign: "center",
+    scrollMarginTop: "100px"
   }}
 >
   <div style={{ maxWidth: "700px", margin: "0 auto" }}>
@@ -540,6 +611,7 @@ textAlign: "center",
         marginBottom: "10px"
       }}
     >
+      <section id="cas-visit"></section>
       Visit Us
     </h2>
 
@@ -548,7 +620,8 @@ textAlign: "center",
       style={{
         color: "#94a3b8",
         marginBottom: "40px",
-        fontSize: "16px"
+        fontSize: "16px",
+        scrollMarginTop: "100px"
       }}
     >
       Come visit our office in West Java
