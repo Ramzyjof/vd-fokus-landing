@@ -336,21 +336,84 @@ onMouseLeave={(e) => {
     ))}
   </div>
 </div>
-<div id="cas-process" style={{ marginBottom: "60px" }}>
-  <h2  style={{ fontSize: "22px", marginBottom: "16px",scrollMarginTop: "100px" }}>
+<div
+  id="cas-process"
+  style={{
+    marginBottom: "80px",
+    scrollMarginTop: "100px"
+  }}
+>
+  <h2 style={{ fontSize: "24px", marginBottom: "30px" }}>
     How It Works
   </h2>
 
-  {[
-    "Book via WhatsApp",
-    "Fill short form",
-    "Join session & improve"
-  ].map((step, i) => (
-    <div key={i} style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
-      <span>👉</span>
-      <span>{step}</span>
-    </div>
-  ))}
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(220px,1fr))",
+      gap: "20px"
+    }}
+  >
+    {[
+      {
+        step: "01",
+        title: "Book Your Session",
+        desc: "Contact us via WhatsApp to secure your slot. Limited sessions available each week."
+      },
+      {
+        step: "02",
+        title: "Get Personalized Strategy",
+        desc: "We review your CV, experience, and target role to identify what’s holding you back."
+      },
+      {
+        step: "03",
+        title: "Practice & Improve",
+        desc: "Go through mock interviews, structured answers, and real feedback to boost your performance."
+      }
+    ].map((item, i) => (
+      <div
+        key={i}
+        style={{
+          padding: "24px",
+          borderRadius: "16px",
+          background: "#1F2937",
+          border: "1px solid rgba(127,29,29,0.25)",
+          transition: "all 0.3s ease",
+          position: "relative"
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateY(-6px)";
+          e.currentTarget.style.background = "#2A1A1A";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateY(0)";
+          e.currentTarget.style.background = "#1F2937";
+        }}
+      >
+        {/* STEP NUMBER */}
+        <div
+          style={{
+            fontSize: "12px",
+            fontWeight: 600,
+            color: "#7F1D1D",
+            marginBottom: "8px"
+          }}
+        >
+          STEP {item.step}
+        </div>
+
+        {/* TITLE */}
+        <h3 style={{ marginBottom: "10px" }}>
+          {item.title}
+        </h3>
+
+        {/* DESC */}
+        <p style={{ color: "#94a3b8", fontSize: "14px", lineHeight: "1.6" }}>
+          {item.desc}
+        </p>
+      </div>
+    ))}
+  </div>
 </div>
        {/* PACKAGE */}
 <div id="cas-package"
