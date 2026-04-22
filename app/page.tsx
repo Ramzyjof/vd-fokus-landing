@@ -93,9 +93,31 @@ useEffect(() => {
     }}
   >
     {/* LOGO */}
-    <div style={{ fontWeight: 600 }}>
-      VD Fokus
-    </div>
+    <div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+    cursor: "pointer"
+  }}
+  onClick={() => {
+  window.location.href = "https://vdfokus.co.id/";
+}}
+>
+  <Image
+    src="/logo.png"
+    alt="VD Fokus"
+    width={32}
+    height={32}
+    style={{
+      objectFit: "contain"
+    }}
+  />
+
+  <span style={{ fontWeight: 600 }}>
+    VD Fokus
+  </span>
+</div>
 
     {/* DESKTOP MENU */}
     <nav
