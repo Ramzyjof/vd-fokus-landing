@@ -171,14 +171,17 @@ useEffect(() => {
       {/* HERO */}
       <section id="cas-hero"
         style={{
-          textAlign: "center",
-          padding: isMobile ? "50px 16px" :"80px 20px",
-          paddingTop: "140px",
-          opacity: visible ? 1 : 0,
-          transform: visible ? "translateY(0)" : "translateY(40px)",
-          transition: "all 1s ease",
-          scrollMarginTop: "100px"
-        }}
+  textAlign: "center",
+  paddingTop: isMobile ? "140px" : "180px",
+
+  paddingBottom: isMobile ? "60px" : "80px",
+  paddingLeft: "20px",
+  paddingRight: "20px",
+
+  opacity: visible ? 1 : 0,
+  transform: visible ? "translateY(0)" : "translateY(40px)",
+  transition: "all 1s ease"
+}}
       >
         <h1 style={{ fontSize: isMobile ? "26px" : "48px", fontWeight: 600, letterSpacing: "-1px" }}>
           Get Selected — Not Just Interviewed
