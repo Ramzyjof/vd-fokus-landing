@@ -107,7 +107,20 @@ useEffect(() => {
     backdropFilter: "blur(10px)",
     borderBottom: "1px solid rgba(127,29,29,0.2)"
   }}
->
+  >
+  <div
+    style={{
+      maxWidth: "1100px",
+      margin: "auto",
+      padding: "14px 20px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between"
+    }}
+  >
+    <div style={{ fontWeight: 600 }}>VD Fokus</div>
+  </div>
+
   <a href="https://vdfokus.co.id/" style={{ cursor: "pointer" }}>
   <a
   href="https://vdfokus.co.id/"
