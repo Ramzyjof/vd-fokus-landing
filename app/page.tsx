@@ -25,6 +25,16 @@ useEffect(() => {
       setVisible(true);
     }, 300);
   }, []);
+  const [scrolled, setScrolled] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 50);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
     <main
@@ -45,107 +55,91 @@ useEffect(() => {
     zIndex: 1000,
     background: "rgba(11,18,32,0.95)",
     backdropFilter: "blur(10px)",
-    borderBottom: "1px solid rgba(127,29,29,0.2)"
+    borderBottom: "1px solid rgba(127,29,29,0.2)",
+    transition: "all 0.3s ease",
+    padding: scrolled ? "10px 0" : "18px 0" // 🔥 shrink
   }}
 >
   <div
     style={{
       maxWidth: "1100px",
       margin: "auto",
-      padding: "14px 20px",
+      padding: "0 20px",
       display: "flex",
-      justifyContent: "space-between",
+      flexDirection: "column",
       alignItems: "center"
     }}
   >
     {/* LOGO */}
-    <div style={{ fontWeight: 600, cursor: "pointer" }}>
-      VD Fokus
-    </div>
-  </div>
-</header>
-<nav
-  style={{
-    marginTop: "70px",
-    padding: "8px 20px",
-    display: "flex",
-    justifyContent: "center",
-    gap: "20px"
-  }}
-></nav>
-{/* 🔴 RED ACCENT BACKGROUND */}
-<div
-  style={{
-    position: "absolute",
-    inset: 0,
-    background: `
-      radial-gradient(circle at 20% 30%, rgba(127,29,29,0.25), transparent 40%),
-      radial-gradient(circle at 80% 70%, rgba(127,29,29,0.2), transparent 40%)
-    `,
-    zIndex: 0,
-    pointerEvents: "none"
-  }}
-/>
-
-{/* 🔥 WRAP ALL YOUR EXISTING CONTENT */}
-<div style={{ position: "relative", zIndex: 1 }}>
-
-  <div
-    style={{
-      borderBottom: "1px solid rgba(255,255,255,0.08)",
-      marginBottom: "20px"
-    }}
-  ></div>
-  
- 
-  
-  
-   {/* NAVBAR */}
-  <nav
-  style={{
-    marginTop: "60px", // slightly smaller push from header
-    padding: "8px 20px", // 🔥 reduced from ~14px
-    display: "flex",
-    justifyContent: "center",
-    gap: "20px", // tighter spacing
-    background: "transparent",
-    fontSize: "14px" // 🔥 smaller text
-  }}
->
-  {[
-    { name: "Home", id: "cas-hero" },
-    { name: "Problem", id: "cas-problem" },
-    { name: "Why Us", id: "cas-why" },
-    { name: "Process", id: "cas-process" },
-    { name: "Package", id: "cas-package" },
-    { name: "Visit", id: "cas-visit" }
-  ].map((item, i) => (
-    <span
-      key={i}
-      onClick={(e) => {
-        e.preventDefault(); // 🔥 IMPORTANT FIX
-        document
-          .getElementById(item.id)
-          ?.scrollIntoView({ behavior: "smooth" });
-      }}
+    <div
       style={{
-        cursor: "pointer",
-        color: "#94a3b8",
+        fontWeight: 600,
+        marginBottom: scrolled ? "6px" : "10px",
         transition: "0.3s"
       }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.color = "#F1F5F9";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.color = "#94a3b8";
+    >
+      VD Fokus
+    </div>
+
+    {/* NAV MENU */}
+    <nav
+      style={{
+        display: "flex",
+        gap: "18px",
+        fontSize: scrolled ? "13px" : "14px",
+        transition: "0.3s"
       }}
     >
-      {item.name}
-    </span>
-  ))}
-</nav>
+      {[
+        { name: "Home", id: "cas-hero" },
+        { name: "Problem", id: "cas-problem" },
+        { name: "Why Us", id: "cas-why" },
+        { name: "Process", id: "cas-process" },
+        { name: "Package", id: "cas-package" },
+        { name: "Visit", id: "cas-visit" }
+      ].map((item, i) => (
+        <span
+          key={i}
+          onClick={() => {
+            const el = document.getElementById(item.id);
+            if (el) {
+              const yOffset = -100; // 🔥 OFFSET FIX
+              const y =
+                el.getBoundingClientRect().top +
+                window.pageYOffset +
+                yOffset;
 
-</div>
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }
+          }}
+          style={{
+            cursor: "pointer",
+            color: "#94a3b8",
+            transition: "0.3s"
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.color = "#F1F5F9";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.color = "#94a3b8";
+          }}
+        >
+          {item.name}
+        </span>
+      ))}
+    </nav>
+  </div>
+
+  {/* RED ACCENT LINE */}
+  <div
+    style={{
+      height: "2px",
+      background:
+        "linear-gradient(to right, transparent, #7F1D1D, transparent)",
+      opacity: 0.6
+    }}
+  />
+</header>
       {/* HERO */}
       <section id="cas-problem"
         style={{
