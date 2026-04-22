@@ -39,10 +39,11 @@ useEffect(() => {
 >
 <header
   style={{
-    position: "sticky",
+    position: "fixed",
     top: 0,
+    width: "100%",
     zIndex: 1000,
-    background: "rgba(11,18,32,0.9)",
+    background: "rgba(11,18,32,0.95)",
     backdropFilter: "blur(10px)",
     borderBottom: "1px solid rgba(127,29,29,0.2)"
   }}
@@ -58,20 +59,20 @@ useEffect(() => {
     }}
   >
     {/* LOGO */}
-    <div style={{ fontWeight: 600 }}>VD Fokus</div>
-
+    <div style={{ fontWeight: 600, cursor: "pointer" }}>
+      VD Fokus
+    </div>
   </div>
-
-  {/* RED ACCENT LINE */}
-  <div
-    style={{
-      height: "2px",
-      background: "linear-gradient(to right, transparent, #7F1D1D, transparent)",
-      opacity: 0.6
-    }}
-  />
 </header>
-
+<nav
+  style={{
+    marginTop: "70px",
+    padding: "8px 20px",
+    display: "flex",
+    justifyContent: "center",
+    gap: "20px"
+  }}
+></nav>
 {/* 🔴 RED ACCENT BACKGROUND */}
 <div
   style={{
@@ -96,47 +97,19 @@ useEffect(() => {
     }}
   ></div>
   
- {/* HEADER */}
-<div
-  style={{
-    position: "fixed",
-    top: 0,
-    width: "100%",
-    zIndex: 1000,
-    background: "rgba(11,18,32,0.95)",
-    backdropFilter: "blur(10px)",
-    borderBottom: "1px solid rgba(127,29,29,0.2)"
-  }}
-  >
-  <div
-    style={{
-      maxWidth: "1100px",
-      margin: "auto",
-      padding: "14px 20px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between"
-    }}
-  >
-    <div style={{ fontWeight: 600 }}>VD Fokus</div>
-  </div>
-
-  <a href="https://vdfokus.co.id/" style={{ cursor: "pointer" }}>
-  <a
-  href="https://vdfokus.co.id/"
-  style={{ display: "inline-block" }}
->
+ 
   
   
    {/* NAVBAR */}
   <nav
   style={{
-    marginTop: "70px", // 🔥 IMPORTANT (push below fixed header)
-    padding: "14px 20px",
+    marginTop: "60px", // slightly smaller push from header
+    padding: "8px 20px", // 🔥 reduced from ~14px
     display: "flex",
     justifyContent: "center",
-    gap: "30px",
-    background: "transparent"
+    gap: "20px", // tighter spacing
+    background: "transparent",
+    fontSize: "14px" // 🔥 smaller text
   }}
 >
   {[
@@ -149,7 +122,8 @@ useEffect(() => {
   ].map((item, i) => (
     <span
       key={i}
-      onClick={() => {
+      onClick={(e) => {
+        e.preventDefault(); // 🔥 IMPORTANT FIX
         document
           .getElementById(item.id)
           ?.scrollIntoView({ behavior: "smooth" });
@@ -170,11 +144,10 @@ useEffect(() => {
     </span>
   ))}
 </nav>
-</a>
-</a>
+
 </div>
       {/* HERO */}
-      <section id="cas-hero"
+      <section id="cas-problem"
         style={{
           textAlign: "center",
           padding: isMobile ? "50px 16px" :"80px 20px",
@@ -703,7 +676,6 @@ textAlign: "center",
   </div>
 </section>
       </div> 
-      </div>
 </main>
   );
 }
