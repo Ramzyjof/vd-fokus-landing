@@ -57,7 +57,7 @@ useEffect(() => {
     backdropFilter: "blur(10px)",
     borderBottom: "1px solid rgba(127,29,29,0.2)",
     transition: "all 0.3s ease",
-    padding: scrolled ? "10px 0" : "18px 0" // 🔥 shrink
+    padding: scrolled ? "10px 0" : "18px 0"
   }}
 >
   <div
@@ -66,22 +66,16 @@ useEffect(() => {
       margin: "auto",
       padding: "0 20px",
       display: "flex",
-      flexDirection: "column",
+      justifyContent: "space-between", // 🔥 KEY FIX
       alignItems: "center"
     }}
   >
-    {/* LOGO */}
-    <div
-      style={{
-        fontWeight: 600,
-        marginBottom: scrolled ? "6px" : "10px",
-        transition: "0.3s"
-      }}
-    >
+    {/* LOGO LEFT */}
+    <div style={{ fontWeight: 600 }}>
       VD Fokus
     </div>
 
-    {/* NAV MENU */}
+    {/* MENU RIGHT */}
     <nav
       style={{
         display: "flex",
@@ -103,7 +97,7 @@ useEffect(() => {
           onClick={() => {
             const el = document.getElementById(item.id);
             if (el) {
-              const yOffset = -100; // 🔥 OFFSET FIX
+              const yOffset = -100;
               const y =
                 el.getBoundingClientRect().top +
                 window.pageYOffset +
@@ -130,7 +124,7 @@ useEffect(() => {
     </nav>
   </div>
 
-  {/* RED ACCENT LINE */}
+  {/* RED LINE */}
   <div
     style={{
       height: "2px",
@@ -141,10 +135,11 @@ useEffect(() => {
   />
 </header>
       {/* HERO */}
-      <section id="cas-problem"
+      <section id="cas-hero"
         style={{
           textAlign: "center",
           padding: isMobile ? "50px 16px" :"80px 20px",
+          paddingTop: "140px",
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(40px)",
           transition: "all 1s ease",
@@ -182,7 +177,7 @@ useEffect(() => {
         }}
       >
         {/* WHY FAIL */}
-        <div id="cas-hero" style={{ marginBottom: "50px" }}>
+        <div id="cas-problem" style={{ marginBottom: "50px" }}>
           <h2 style={{ fontSize: "22px", marginBottom: "12px", scrollMarginTop: "100px" }}>
             Why You Keep Failing Interviews
           </h2>
