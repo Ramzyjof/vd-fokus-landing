@@ -627,17 +627,32 @@ textAlign: "center",
   <div style={{ maxWidth: "700px", margin: "0 auto" }}>
     
     {/* TITLE */}
-    <h2
-      style={{
-        fontSize: "36px",
-        fontWeight: 600,
-        color: "#e5e7eb",
-        marginBottom: "10px"
-      }}
-    >
-      <section id="cas-visit"></section>
-      Visit Us
-    </h2>
+    <div id="cas-visit" style={{ marginBottom: "20px" }}>
+
+  {/* LOGO */}
+  <Image
+    src="/logo.png"
+    alt="VD Fokus"
+    width={80}
+    height={80}
+    style={{
+      marginBottom: "12px",
+      filter: "drop-shadow(0 0 10px rgba(127,29,29,0.6))"
+    }}
+  />
+
+  {/* TITLE */}
+  <h2
+    style={{
+      fontSize: "32px",
+      fontWeight: 600,
+      color: "#e5e7eb"
+    }}
+  >
+    Visit Us
+  </h2>
+
+</div>
 
     {/* SUBTITLE */}
     <p
