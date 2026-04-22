@@ -60,39 +60,6 @@ useEffect(() => {
     {/* LOGO */}
     <div style={{ fontWeight: 600 }}>VD Fokus</div>
 
-    {/* MENU */}
-    <nav style={{ display: "flex", gap: "24px", position: "relative" }}>
-      {[
-        { name: "Home", id: "cas-hero" },
-        { name: "Problem", id: "cas-problem" },
-        { name: "Why Us", id: "cas-why" },
-        { name: "Process", id: "cas-process" },
-        { name: "Package", id: "cas-package" },
-        { name: "Visit", id: "cas-visit" }
-      ].map((item, i) => (
-        <span
-          key={i}
-          onClick={() => {
-            document
-              .getElementById(item.id)
-              ?.scrollIntoView({ behavior: "smooth" });
-          }}
-          style={{
-            cursor: "pointer",
-            color: "#94a3b8",
-            transition: "0.3s"
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = "#F1F5F9";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = "#94a3b8";
-          }}
-        >
-          {item.name}
-        </span>
-      ))}
-    </nav>
   </div>
 
   {/* RED ACCENT LINE */}
@@ -129,17 +96,16 @@ useEffect(() => {
     }}
   ></div>
   
- {/* NAVBAR */}
+ {/* HEADER */}
 <div
   style={{
-    padding: isMobile ? "12px 16px" : "16px 40px",
-    display: "flex",
-    justifyContent: isMobile ? "center" : "flex-end",
-    alignItems: "center",
-
-    background: "rgba(255,255,255,0.05)",
-    backdropFilter: "blur(12px)",
-    borderBottom: "1px solid rgba(255,255,255,0.08)"
+    position: "fixed",
+    top: 0,
+    width: "100%",
+    zIndex: 1000,
+    background: "rgba(11,18,32,0.95)",
+    backdropFilter: "blur(10px)",
+    borderBottom: "1px solid rgba(127,29,29,0.2)"
   }}
 >
   <a href="https://vdfokus.co.id/" style={{ cursor: "pointer" }}>
@@ -167,6 +133,48 @@ useEffect(() => {
       e.currentTarget.style.filter = "drop-shadow(0 0 8px rgba(255,255,255,0.2))";
     }}
   />
+   {/* NAVBAR */}
+  <nav
+  style={{
+    marginTop: "70px", // 🔥 IMPORTANT (push below fixed header)
+    padding: "14px 20px",
+    display: "flex",
+    justifyContent: "center",
+    gap: "30px",
+    background: "transparent"
+  }}
+>
+  {[
+    { name: "Home", id: "cas-hero" },
+    { name: "Problem", id: "cas-problem" },
+    { name: "Why Us", id: "cas-why" },
+    { name: "Process", id: "cas-process" },
+    { name: "Package", id: "cas-package" },
+    { name: "Visit", id: "cas-visit" }
+  ].map((item, i) => (
+    <span
+      key={i}
+      onClick={() => {
+        document
+          .getElementById(item.id)
+          ?.scrollIntoView({ behavior: "smooth" });
+      }}
+      style={{
+        cursor: "pointer",
+        color: "#94a3b8",
+        transition: "0.3s"
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.color = "#F1F5F9";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.color = "#94a3b8";
+      }}
+    >
+      {item.name}
+    </span>
+  ))}
+</nav>
 </a>
 </a>
 </div>
