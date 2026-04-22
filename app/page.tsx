@@ -61,7 +61,7 @@ useEffect(() => {
     <div style={{ fontWeight: 600 }}>VD Fokus</div>
 
     {/* MENU */}
-    <nav style={{ display: "flex", gap: "24px" }}>
+    <nav style={{ display: "flex", gap: "24px", position: "relative" }}>
       {[
         { name: "Home", id: "cas-hero" },
         { name: "Problem", id: "cas-problem" },
