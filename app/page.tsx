@@ -126,26 +126,8 @@ useEffect(() => {
   href="https://vdfokus.co.id/"
   style={{ display: "inline-block" }}
 >
-  <Image
-    src="/logo.png"
-    alt="VD Fokus"
-    width={isMobile ? 90 : 120}
-    height={isMobile ? 30 : 40}
-    style={{
-      transition: "all 0.3s ease",
-      filter: "drop-shadow(0 0 8px rgba(255,255,255,0.2))"
-    }}
-
-    onMouseEnter={(e) => {
-      e.currentTarget.style.transform = "translateY(-3px) scale(1.05)";
-      e.currentTarget.style.filter = "drop-shadow(0 0 16px rgba(255,255,255,0.5))";
-    }}
-
-    onMouseLeave={(e) => {
-      e.currentTarget.style.transform = "translateY(0) scale(1)";
-      e.currentTarget.style.filter = "drop-shadow(0 0 8px rgba(255,255,255,0.2))";
-    }}
-  />
+  
+  
    {/* NAVBAR */}
   <nav
   style={{
