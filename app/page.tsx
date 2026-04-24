@@ -686,127 +686,124 @@ textAlign: "center",
     background: "rgba(255,255,255,0.02)",
     borderTop: "1px solid rgba(127,29,29,0.2)",
     borderBottom: "1px solid rgba(127,29,29,0.2)",
+    textAlign: "center",
     scrollMarginTop: "100px"
   }}
 >
-  <div
-    style={{
-      maxWidth: "1100px",
-      margin: "0 auto",
-      display: "grid",
-      gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
-      gap: "40px",
-      alignItems: "center"
-    }}
-  >
-
-    {/* LEFT SIDE */}
-    <div>
-
+  <div style={{ maxWidth: "700px", margin: "0 auto" }}>
+    
+    {/* TITLE + LOGO (FIXED) */}
+    <div
+      id="cas-visit"
+      style={{
+        marginBottom: "20px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "12px"
+      }}
+    >
       <h2
         style={{
           fontSize: "32px",
           fontWeight: 600,
           color: "#e5e7eb",
-          marginBottom: "10px"
+          margin: 0
         }}
       >
         Visit Us
       </h2>
 
-      <p
-        style={{
-          color: "#94a3b8",
-          marginBottom: "30px",
-          fontSize: "16px"
-        }}
-      >
-        Come visit our office in West Java
-      </p>
-
-      <p
-        style={{
-          fontSize: "16px",
-          color: "#e5e7eb",
-          marginBottom: "6px",
-          fontWeight: 500
-        }}
-      >
-        PT Vera Diana Fokus
-      </p>
-
-      <p
-        style={{
-          fontSize: "15px",
-          color: "#94a3b8",
-          marginBottom: "30px",
-          lineHeight: "1.6"
-        }}
-      >
-        Jl. Raya Bogor KM 30, Cimanggis, Depok, West Java, Indonesia
-      </p>
-
-      <a
-        href="https://www.google.com/maps?q=-6.3836475,106.9248334"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          display: "inline-block",
-          padding: "12px 24px",
-          borderRadius: "999px",
-          background: "#3B82F6",
-          border: "1px solid #7F1D1D",
-          color: "#fff",
-          fontSize: "14px",
-          fontWeight: 500,
-          textDecoration: "none",
-          boxShadow: "0 0 20px rgba(127,29,29,0.4)",
-          transition: "all 0.3s ease"
-        }}
-        onMouseOver={(e) =>
-          (e.currentTarget.style.transform = "scale(1.05)")
-        }
-        onMouseOut={(e) =>
-          (e.currentTarget.style.transform = "scale(1)")
-        }
-      >
-        Get Directions →
-      </a>
-
-    </div>
-
-    {/* RIGHT SIDE */}
-    <div style={{ textAlign: "center" }}>
-
-      {/* LOGO */}
       <Image
         src="/logo.png"
         alt="VD Fokus"
-        width={80}
-        height={80}
+        width={50}
+        height={50}
         style={{
-          marginBottom: "16px",
           filter: "drop-shadow(0 0 10px rgba(127,29,29,0.6))"
         }}
       />
+    </div>
 
-      {/* MAP */}
-      <div
-        style={{
-          borderRadius: "16px",
-          overflow: "hidden",
-          border: "1px solid rgba(127,29,29,0.25)"
-        }}
-      >
-        <iframe
-          src="https://www.google.com/maps?q=-6.3836475,106.9248334&z=15&output=embed"
-          width="100%"
-          height="320"
-          style={{ border: 0 }}
-          loading="lazy"
-        />
-      </div>
+    {/* SUBTITLE */}
+    <p
+      style={{
+        color: "#94a3b8",
+        marginBottom: "40px",
+        fontSize: "16px"
+      }}
+    >
+      Come visit our office in West Java
+    </p>
 
+    {/* COMPANY */}
+    <p
+      style={{
+        fontSize: "16px",
+        color: "#e5e7eb",
+        marginBottom: "6px",
+        fontWeight: 500
+      }}
+    >
+      PT Vera Diana Fokus
+    </p>
+
+    {/* ADDRESS */}
+    <p
+      style={{
+        fontSize: "15px",
+        color: "#94a3b8",
+        marginBottom: "30px",
+        lineHeight: "1.6"
+      }}
+    >
+      Jl. Raya Bogor KM 30, Cimanggis, Depok, West Java, Indonesia
+    </p>
+
+    {/* BUTTON */}
+    <a
+      href="https://www.google.com/maps?q=-6.3836475,106.9248334"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: "inline-block",
+        marginBottom: "40px",
+        padding: "12px 24px",
+        borderRadius: "999px",
+        background: "#3B82F6",
+        border: "1px solid #7F1D1D",
+        color: "#fff",
+        fontSize: "14px",
+        fontWeight: 500,
+        textDecoration: "none",
+        boxShadow: "0 0 20px rgba(127,29,29,0.4)",
+        transition: "all 0.3s ease"
+      }}
+      onMouseOver={(e) =>
+        (e.currentTarget.style.transform = "scale(1.05)")
+      }
+      onMouseOut={(e) =>
+        (e.currentTarget.style.transform = "scale(1)")
+      }
+    >
+      Get Directions →
+    </a>
+
+    {/* MAP */}
+    <div
+      style={{
+        borderRadius: "16px",
+        overflow: "hidden",
+        border: "1px solid rgba(127,29,29,0.25)"
+      }}
+    >
+      <iframe
+        src="https://www.google.com/maps?q=-6.3836475,106.9248334&z=15&output=embed"
+        width="100%"
+        height="350"
+        style={{ border: 0 }}
+        loading="lazy"
+      />
     </div>
 
   </div>
