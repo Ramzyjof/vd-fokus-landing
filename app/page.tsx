@@ -727,43 +727,84 @@ textAlign: "center",
     }}
   >
 
-    {/* LEFT SIDE (TEXT) */}
+    {/* LEFT SIDE */}
     <div>
-      <h2 style={{ fontSize: "32px", marginBottom: "10px" }}>
+
+      <h2
+        style={{
+          fontSize: "32px",
+          fontWeight: 600,
+          color: "#e5e7eb",
+          marginBottom: "10px"
+        }}
+      >
         Visit Us
       </h2>
 
-      <p style={{ color: "#94a3b8", marginBottom: "20px" }}>
+      <p
+        style={{
+          color: "#94a3b8",
+          marginBottom: "30px",
+          fontSize: "16px"
+        }}
+      >
         Come visit our office in West Java
       </p>
 
-      <p style={{ fontWeight: 500, marginBottom: "6px" }}>
+      <p
+        style={{
+          fontSize: "16px",
+          color: "#e5e7eb",
+          marginBottom: "6px",
+          fontWeight: 500
+        }}
+      >
         PT Vera Diana Fokus
       </p>
 
-      <p style={{ color: "#94a3b8", marginBottom: "20px" }}>
-        Jl. Raya Bogor KM 30, Cimanggis, Depok
+      <p
+        style={{
+          fontSize: "15px",
+          color: "#94a3b8",
+          marginBottom: "30px",
+          lineHeight: "1.6"
+        }}
+      >
+        Jl. Raya Bogor KM 30, Cimanggis, Depok, West Java, Indonesia
       </p>
 
       <a
         href="https://www.google.com/maps?q=-6.3836475,106.9248334"
         target="_blank"
+        rel="noopener noreferrer"
         style={{
           display: "inline-block",
           padding: "12px 24px",
           borderRadius: "999px",
           background: "#3B82F6",
+          border: "1px solid #7F1D1D",
           color: "#fff",
-          textDecoration: "none"
+          fontSize: "14px",
+          fontWeight: 500,
+          textDecoration: "none",
+          boxShadow: "0 0 20px rgba(127,29,29,0.4)",
+          transition: "all 0.3s ease"
         }}
+        onMouseOver={(e) =>
+          (e.currentTarget.style.transform = "scale(1.05)")
+        }
+        onMouseOut={(e) =>
+          (e.currentTarget.style.transform = "scale(1)")
+        }
       >
         Get Directions →
       </a>
+
     </div>
 
-    {/* RIGHT SIDE (LOGO + MAP) */}
+    {/* RIGHT SIDE */}
     <div style={{ textAlign: "center" }}>
-      
+
       {/* LOGO */}
       <Image
         src="/logo.png"
@@ -771,7 +812,7 @@ textAlign: "center",
         width={80}
         height={80}
         style={{
-          marginBottom: "20px",
+          marginBottom: "16px",
           filter: "drop-shadow(0 0 10px rgba(127,29,29,0.6))"
         }}
       />
@@ -787,13 +828,14 @@ textAlign: "center",
         <iframe
           src="https://www.google.com/maps?q=-6.3836475,106.9248334&z=15&output=embed"
           width="100%"
-          height="300"
+          height="320"
           style={{ border: 0 }}
           loading="lazy"
         />
       </div>
 
     </div>
+
   </div>
 </section>
       </div> 
