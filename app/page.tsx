@@ -692,66 +692,41 @@ textAlign: "center",
 >
   <div style={{ maxWidth: "700px", margin: "0 auto" }}>
     
-    {/* TITLE + FLOATING LOGO */}
-    <div
-      id="cas-visit"
-      style={{
-        marginBottom: "20px",
-        position: "relative",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
-      }}
-    >
+    {/* TITLE */}
+    <div id="cas-visit" style={{ marginBottom: "20px" }}>
       <h2
         style={{
           fontSize: "32px",
           fontWeight: 600,
-          color: "#e5e7eb",
-          margin: 0
+          color: "#e5e7eb"
         }}
       >
         Visit Us
       </h2>
-
-      {/* LOGO ON RIGHT */}
-      <Image
-        src="/logo.png"
-        alt="VD Fokus"
-        width={90}
-        height={90}
-        style={{
-          position: "absolute",
-          right: isMobile ? "0px" : "-120px",
-          top: "50%",
-          transform: "translateY(-50%)",
-          filter: "drop-shadow(0 0 12px rgba(127,29,29,0.7))"
-        }}
-      />
     </div>
 
     {/* SUBTITLE */}
     <p
       style={{
         color: "#94a3b8",
-        marginBottom: "40px",
+        marginBottom: "30px",
         fontSize: "16px"
       }}
     >
       Come visit our office in West Java
     </p>
 
-    {/* COMPANY */}
-    <p
+    {/* LOGO (REPLACES COMPANY NAME) */}
+    <Image
+      src="/logo.png"
+      alt="VD Fokus"
+      width={70}
+      height={70}
       style={{
-        fontSize: "16px",
-        color: "#e5e7eb",
-        marginBottom: "6px",
-        fontWeight: 500
+        marginBottom: "20px",
+        filter: "drop-shadow(0 0 10px rgba(127,29,29,0.6))"
       }}
-    >
-      PT Vera Diana Fokus
-    </p>
+    />
 
     {/* ADDRESS */}
     <p
