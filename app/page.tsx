@@ -2,7 +2,34 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-
+export const metadata = {
+  title: "Career Acceleration Services | VD Fokus",
+  description:
+    "We help professionals pass interviews, improve CVs, and get job offers faster using real hiring insights.",
+  openGraph: {
+    title: "Career Acceleration Services | VD Fokus",
+    description:
+      "Get shortlisted and land job offers with expert interview coaching.",
+    url: "https://vdfokus.co.id/int-prep",
+    siteName: "VD Fokus",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Career Acceleration Services | VD Fokus",
+    description:
+      "Boost your interview performance and get hired faster.",
+    images: ["/og-image.png"],
+  },
+};
 export default function Page() {
   const [visible, setVisible] = useState(false);
   const [pressed, setPressed] = useState(false);
@@ -56,6 +83,8 @@ useEffect(() => {
 
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
+  
+  
 }, []);
 
   return (
@@ -67,6 +96,7 @@ useEffect(() => {
     background: "radial-gradient(circle at top, #1e293b, #0f172a)",
     color: "#fff",
     minHeight: "100vh"
+    
   }}
 >
 <header
@@ -683,122 +713,87 @@ textAlign: "center",
     background: "rgba(255,255,255,0.02)",
     borderTop: "1px solid rgba(127,29,29,0.2)",
     borderBottom: "1px solid rgba(127,29,29,0.2)",
-    textAlign: "center",
     scrollMarginTop: "100px"
   }}
 >
-  <div style={{ maxWidth: "700px", margin: "0 auto" }}>
-    
-    {/* TITLE */}
-    <div id="cas-visit" style={{ marginBottom: "20px" }}>
-
-  {/* LOGO */}
-  <Image
-    src="/logo.png"
-    alt="VD Fokus"
-    width={80}
-    height={80}
+  <div
     style={{
-      marginBottom: "12px",
-      filter: "drop-shadow(0 0 10px rgba(127,29,29,0.6))"
-    }}
-  />
-
-  {/* TITLE */}
-  <h2
-    style={{
-      fontSize: "32px",
-      fontWeight: 600,
-      color: "#e5e7eb"
+      maxWidth: "1100px",
+      margin: "0 auto",
+      display: "grid",
+      gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+      gap: "40px",
+      alignItems: "center"
     }}
   >
-    Visit Us
-  </h2>
 
-</div>
+    {/* LEFT SIDE (TEXT) */}
+    <div>
+      <h2 style={{ fontSize: "32px", marginBottom: "10px" }}>
+        Visit Us
+      </h2>
 
-    {/* SUBTITLE */}
-    <p
-      style={{
-        color: "#94a3b8",
-        marginBottom: "40px",
-        fontSize: "16px",
-        scrollMarginTop: "100px"
-      }}
-    >
-      Come visit our office in West Java
-    </p>
+      <p style={{ color: "#94a3b8", marginBottom: "20px" }}>
+        Come visit our office in West Java
+      </p>
 
-    {/* COMPANY */}
-    <p
-      style={{
-        fontSize: "16px",
-        color: "#e5e7eb",
-        marginBottom: "6px",
-        fontWeight: 500
-      }}
-    >
-      PT Vera Diana Fokus
-    </p>
+      <p style={{ fontWeight: 500, marginBottom: "6px" }}>
+        PT Vera Diana Fokus
+      </p>
 
-    {/* ADDRESS */}
-    <p
-      style={{
-        fontSize: "15px",
-        color: "#94a3b8",
-        marginBottom: "30px",
-        lineHeight: "1.6"
-      }}
-    >
-      Jl. Raya Bogor KM 30, Cimanggis, Depok, West Java, Indonesia
-    </p>
+      <p style={{ color: "#94a3b8", marginBottom: "20px" }}>
+        Jl. Raya Bogor KM 30, Cimanggis, Depok
+      </p>
 
-    {/* GET DIRECTIONS BUTTON */}
-    <a
-      href="https://www.google.com/maps?q=-6.3836475,106.9248334"
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{
-        display: "inline-block",
-        marginBottom: "40px",
-        padding: "12px 24px",
-        borderRadius: "999px",
-        background: "#3B82F6",
-        border: "1px solid #7F1D1D",
-        color: "#fff",
-        fontSize: "14px",
-        fontWeight: 500,
-        textDecoration: "none",
-        boxShadow: "0 0 20px rgba(127,29,29,0.4)",
-        transition: "all 0.3s ease"
-      }}
-      onMouseOver={(e) =>
-        (e.currentTarget.style.transform = "scale(1.05)")
-      }
-      onMouseOut={(e) =>
-        (e.currentTarget.style.transform = "scale(1)")
-      }
-    >
-      Get Directions →
-    </a>
-
-    {/* GOOGLE MAP */}
-    <div
-      style={{
-        borderRadius: "16px",
-        overflow: "hidden",
-        border: "1px solid rgba(127,29,29,0.25)"
-      }}
-    >
-      <iframe
-        src="https://www.google.com/maps?q=-6.3836475,106.9248334&z=15&output=embed"
-        width="100%"
-        height="350"
-        style={{ border: 0 }}
-        loading="lazy"
-      />
+      <a
+        href="https://www.google.com/maps?q=-6.3836475,106.9248334"
+        target="_blank"
+        style={{
+          display: "inline-block",
+          padding: "12px 24px",
+          borderRadius: "999px",
+          background: "#3B82F6",
+          color: "#fff",
+          textDecoration: "none"
+        }}
+      >
+        Get Directions →
+      </a>
     </div>
 
+    {/* RIGHT SIDE (LOGO + MAP) */}
+    <div style={{ textAlign: "center" }}>
+      
+      {/* LOGO */}
+      <Image
+        src="/logo.png"
+        alt="VD Fokus"
+        width={80}
+        height={80}
+        style={{
+          marginBottom: "20px",
+          filter: "drop-shadow(0 0 10px rgba(127,29,29,0.6))"
+        }}
+      />
+
+      {/* MAP */}
+      <div
+        style={{
+          borderRadius: "16px",
+          overflow: "hidden",
+          border: "1px solid rgba(127,29,29,0.25)"
+        }}
+      >
+        <iframe
+          src="https://www.google.com/maps?q=-6.3836475,106.9248334&z=15&output=embed"
+          width="100%"
+          height="300"
+          style={{ border: 0 }}
+          loading="lazy"
+        />
+      </div>
+
+    </div>
   </div>
 </section>
       </div> 
