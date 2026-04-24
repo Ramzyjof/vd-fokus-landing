@@ -194,28 +194,69 @@ useEffect(() => {
   />
 </header>
       {/* HERO */}
-      <section id="cas-hero"
-        style={{
-  textAlign: "center",
-  paddingTop: isMobile ? "140px" : "180px",
+      <section
+  id="cas-hero"
+  style={{
+    position: "relative", // REQUIRED for watermark
+    textAlign: "center",
+    paddingTop: isMobile ? "140px" : "180px",
+    paddingBottom: isMobile ? "60px" : "80px",
+    paddingLeft: "20px",
+    paddingRight: "20px",
+    opacity: visible ? 1 : 0,
+    transform: visible ? "translateY(0)" : "translateY(40px)",
+    transition: "all 1s ease"
+  }}
+>
 
-  paddingBottom: isMobile ? "60px" : "80px",
-  paddingLeft: "20px",
-  paddingRight: "20px",
+  {/* WATERMARK */}
+  <div
+    style={{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      opacity: 0.05,
+      pointerEvents: "none",
+      zIndex: 0
+    }}
+  >
+    <Image
+      src="/logo.png"
+      alt="VD Fokus"
+      width={500}
+      height={500}
+      style={{ objectFit: "contain" }}
+    />
+  </div>
 
-  opacity: visible ? 1 : 0,
-  transform: visible ? "translateY(0)" : "translateY(40px)",
-  transition: "all 1s ease"
-}}
-      >
-        <h1 style={{ fontSize: isMobile ? "26px" : "48px", fontWeight: 600, letterSpacing: "-1px" }}>
-          Get Selected — Not Just Interviewed
-        </h1>
+  {/* TITLE */}
+  <h1
+    style={{
+      position: "relative",
+      zIndex: 1,
+      fontSize: isMobile ? "26px" : "48px",
+      fontWeight: 600,
+      letterSpacing: "-1px"
+    }}
+  >
+    Get Selected — Not Just Interviewed
+  </h1>
 
-        <p style={{ marginTop: "16px", color: "#94a3b8", fontSize: "18px" }}>
-          We help professionals pass HR screening and interviews using real hiring insights.
-        </p>
-      </section>
+  {/* SUBTITLE */}
+  <p
+    style={{
+      position: "relative",
+      zIndex: 1,
+      marginTop: "16px",
+      color: "#94a3b8",
+      fontSize: "18px"
+    }}
+  >
+    We help professionals pass HR screening and interviews using real hiring insights.
+  </p>
+
+</section>
 
       {/* DIVIDER */}
       <div
