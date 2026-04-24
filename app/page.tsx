@@ -717,16 +717,23 @@ textAlign: "center",
     </p>
 
     {/* LOGO (REPLACES COMPANY NAME) */}
-    <Image
-      src="/logo.png"
-      alt="VD Fokus"
-      width={70}
-      height={70}
-      style={{
-        marginBottom: "20px",
-        filter: "drop-shadow(0 0 10px rgba(127,29,29,0.6))"
-      }}
-    />
+    <div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "20px"
+  }}
+>
+  <Image
+    src="/logo.png"
+    alt="VD Fokus"
+    width={80}
+    height={80}
+    style={{
+      filter: "drop-shadow(0 0 10px rgba(127,29,29,0.6))"
+    }}
+  />
+</div>
 
     {/* ADDRESS */}
     <p
