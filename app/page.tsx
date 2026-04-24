@@ -692,15 +692,15 @@ textAlign: "center",
 >
   <div style={{ maxWidth: "700px", margin: "0 auto" }}>
     
-    {/* TITLE + LOGO (FIXED) */}
+    {/* TITLE + FLOATING LOGO */}
     <div
       id="cas-visit"
       style={{
         marginBottom: "20px",
+        position: "relative",
         display: "flex",
-        alignItems: "center",
         justifyContent: "center",
-        gap: "12px"
+        alignItems: "center"
       }}
     >
       <h2
@@ -714,13 +714,18 @@ textAlign: "center",
         Visit Us
       </h2>
 
+      {/* LOGO ON RIGHT */}
       <Image
         src="/logo.png"
         alt="VD Fokus"
-        width={50}
-        height={50}
+        width={90}
+        height={90}
         style={{
-          filter: "drop-shadow(0 0 10px rgba(127,29,29,0.6))"
+          position: "absolute",
+          right: isMobile ? "0px" : "-120px",
+          top: "50%",
+          transform: "translateY(-50%)",
+          filter: "drop-shadow(0 0 12px rgba(127,29,29,0.7))"
         }}
       />
     </div>
