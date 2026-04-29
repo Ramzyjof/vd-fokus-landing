@@ -219,7 +219,7 @@ useEffect(() => {
       letterSpacing: "-1px"
     }}
   >
-    Get Selected — Not Just Interviewed
+    Get Selected, Not Just Interviewed
   </h1>
 
   {/* SUBTITLE */}
@@ -265,7 +265,7 @@ useEffect(() => {
           </h2>
 
           <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
-            Most candidates don’t fail because they lack experience — they fail because they present it poorly.
+            Most candidates don’t fail because they lack experience, they fail because they present it poorly.
           </p>
 
           <ul style={{ lineHeight: "2", color: "#e2e8f0" }}>
@@ -509,7 +509,7 @@ onMouseLeave={(e) => {
   </div>
 
   <p style={{ color: "#facc15", fontSize: "14px", marginBottom: "20px" }}>
-    🚀 Launch Offer — Only 5 slots available
+    🚀 Launch Offer (Only 5 slots available)
   </p>
 
   <div
@@ -635,7 +635,7 @@ onMouseLeave={(e) => {
   </div>
 
   <div style={{ color: "#cbd5f5", lineHeight: "1.8", fontSize: "14px" }}>
-    • Each session is designed as a focused 90-minute deep-dive to maximize results.<br />
+    • Each session is designed as a focused 60-minute deep-dive to maximize results.<br />
     • Additional time can be arranged if needed (+IDR 100K per hour).<br />
     • We recommend conducting the session in person at our office for maximum results.<br />
     • Online sessions are also available via Google Meet or Microsoft Teams.
