@@ -209,27 +209,6 @@ useEffect(() => {
   }}
 >
 
-  {/* WATERMARK */}
-  <div
-    style={{
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      opacity: 0.05,
-      pointerEvents: "none",
-      zIndex: 0
-    }}
-  >
-    <Image
-      src="/logo.png"
-      alt="VD Fokus"
-      width={500}
-      height={500}
-      style={{ objectFit: "contain" }}
-    />
-  </div>
-
   {/* TITLE */}
   <h1
     style={{
