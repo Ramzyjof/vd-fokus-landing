@@ -290,7 +290,7 @@ useEffect(() => {
   </h2>
 
   <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
-    We know what hiring managers actually look for — because we’ve been on the other side.
+    We know what hiring managers actually look for, because we’ve been on the other side.
   </p>
 
   <ul style={{ lineHeight: "2", color: "#e2e8f0" }}>
