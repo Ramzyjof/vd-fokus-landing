@@ -323,27 +323,112 @@ useEffect(() => {
   ))}
 
   {/* LANGUAGE BUTTON */}
-  <button
-    onClick={() =>
-      setLanguage(
-        language === "en"
-          ? "id"
-          : "en"
-      )
-    }
+  <div
+  onClick={() =>
+    setLanguage(
+      language === "en"
+        ? "id"
+        : "en"
+    )
+  }
+  style={{
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+    padding: "6px 8px",
+    borderRadius: "999px",
+    background: "rgba(255,255,255,0.06)",
+    border:
+      "1px solid rgba(255,255,255,0.12)",
+    cursor: "pointer",
+    transition: "all 0.3s ease",
+    position: "relative",
+    minWidth: "90px",
+    justifyContent:
+      language === "en"
+        ? "flex-start"
+        : "flex-end"
+  }}
+>
+  {/* SWITCH BG */}
+  <div
     style={{
-      padding: "8px 14px",
+      position: "absolute",
+      width: "38px",
+      height: "38px",
       borderRadius: "999px",
-      border:
-        "1px solid rgba(255,255,255,0.15)",
-      background: "transparent",
-      color: "#fff",
-      cursor: "pointer",
-      fontSize: "13px"
+      background:
+        "linear-gradient(135deg,#3B82F6,#7F1D1D)",
+      transition: "all 0.3s ease",
+      left:
+        language === "en"
+          ? "6px"
+          : "calc(100% - 44px)"
+    }}
+  />
+
+  {/* EN */}
+  <div
+    style={{
+      position: "relative",
+      zIndex: 2,
+      display: "flex",
+      alignItems: "center",
+      gap: "6px",
+      padding:
+        language === "en"
+          ? "0 10px 0 4px"
+          : "0"
     }}
   >
-    {text[language].translate}
-  </button>
+    <span style={{ fontSize: "18px" }}>
+      🇺🇸
+    </span>
+
+    {language === "en" && (
+      <span
+        style={{
+          fontSize: "12px",
+          fontWeight: 600,
+          color: "#fff"
+        }}
+      >
+        EN
+      </span>
+    )}
+  </div>
+
+  {/* ID */}
+  <div
+    style={{
+      position: "relative",
+      zIndex: 2,
+      display: "flex",
+      alignItems: "center",
+      gap: "6px",
+      padding:
+        language === "id"
+          ? "0 4px 0 10px"
+          : "0"
+    }}
+  >
+    {language === "id" && (
+      <span
+        style={{
+          fontSize: "12px",
+          fontWeight: 600,
+          color: "#fff"
+        }}
+      >
+        ID
+      </span>
+    )}
+
+    <span style={{ fontSize: "18px" }}>
+      🇮🇩
+    </span>
+  </div>
+</div>
 </nav>
 
     {/* HAMBURGER */}
