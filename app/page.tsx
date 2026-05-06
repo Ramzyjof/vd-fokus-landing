@@ -302,44 +302,49 @@ useEffect(() => {
 
     {/* DESKTOP MENU */}
     <nav
-      style={{
-        display: isMobile ? "none" : "flex",
-        gap: "18px",
-        fontSize: scrolled ? "13px" : "14px"
-      }}
-    >
-      {menuItems.map((item, i) => (
-        <span
-          key={i}
-          onClick={() => scrollToSection(item.id)}
-          style={{ cursor: "pointer", color: "#94a3b8" }}
-        >
-          {item.name}
-          <button
-  onClick={() =>
-    setLanguage(
-      language === "en"
-        ? "id"
-        : "en"
-    )
-  }
   style={{
-    padding: "8px 14px",
-    borderRadius: "999px",
-    border:
-      "1px solid rgba(255,255,255,0.15)",
-    background: "transparent",
-    color: "#fff",
-    cursor: "pointer",
-    fontSize: "13px"
+    display: isMobile ? "none" : "flex",
+    gap: "18px",
+    fontSize: scrolled ? "13px" : "14px",
+    alignItems: "center"
   }}
 >
-  {text[language].translate}
-</button>
-        </span>
-        
-      ))}
-    </nav>
+  {menuItems.map((item, i) => (
+    <span
+      key={i}
+      onClick={() => scrollToSection(item.id)}
+      style={{
+        cursor: "pointer",
+        color: "#94a3b8"
+      }}
+    >
+      {item.name}
+    </span>
+  ))}
+
+  {/* LANGUAGE BUTTON */}
+  <button
+    onClick={() =>
+      setLanguage(
+        language === "en"
+          ? "id"
+          : "en"
+      )
+    }
+    style={{
+      padding: "8px 14px",
+      borderRadius: "999px",
+      border:
+        "1px solid rgba(255,255,255,0.15)",
+      background: "transparent",
+      color: "#fff",
+      cursor: "pointer",
+      fontSize: "13px"
+    }}
+  >
+    {text[language].translate}
+  </button>
+</nav>
 
     {/* HAMBURGER */}
     <div
@@ -514,22 +519,57 @@ useEffect(() => {
     }}
   >
     {[
-      {
-        text: "After applying the changes, I finally started getting interview calls within 2 weeks.",
-        name: "Senior Candidate",
-        role: "Operations Manager"
-      },
-      {
-        text: "The interview preparation completely changed how I present myself. I felt much more confident.",
-        name: "Mid-Level Professional",
-        role: "Finance Executive"
-      },
-      {
-        text: "This helped me understand what hiring managers actually look for. Huge difference.",
-        name: "Job Seeker",
-        role: "Business Analyst"
-      }
-    ].map((t, i) => (
+  {
+    text:
+      language === "en"
+        ? "After applying the changes, I finally started getting interview calls within 2 weeks."
+        : "Setelah menerapkan perubahan yang disarankan, saya akhirnya mulai mendapatkan panggilan interview dalam 2 minggu.",
+
+    name:
+      language === "en"
+        ? "Senior Candidate"
+        : "Kandidat Senior",
+
+    role:
+      language === "en"
+        ? "Operations Manager"
+        : "Manager Operasional"
+  },
+
+  {
+    text:
+      language === "en"
+        ? "The interview preparation completely changed how I present myself. I felt much more confident."
+        : "Persiapan interview benar-benar mengubah cara saya mempresentasikan diri. Saya jadi jauh lebih percaya diri.",
+
+    name:
+      language === "en"
+        ? "Mid-Level Professional"
+        : "Profesional Mid-Level",
+
+    role:
+      language === "en"
+        ? "Finance Executive"
+        : "Eksekutif Finance"
+  },
+
+  {
+    text:
+      language === "en"
+        ? "This helped me understand what hiring managers actually look for. Huge difference."
+        : "Program ini membantu saya memahami apa yang sebenarnya dicari hiring manager. Hasilnya sangat berbeda.",
+
+    name:
+      language === "en"
+        ? "Job Seeker"
+        : "Pencari Kerja",
+
+    role:
+      language === "en"
+        ? "Business Analyst"
+        : "Business Analyst"
+  }
+].map((t, i) => (
       <div
         key={i}
         style={{
@@ -578,22 +618,49 @@ onMouseLeave={(e) => {
     }}
   >
     {[
-      {
-        step: "01",
-        title: "Book Your Session",
-        desc: "Contact us via WhatsApp to secure your slot. Limited sessions available each week."
-      },
-      {
-        step: "02",
-        title: "Get Personalized Strategy",
-        desc: "We review your CV, experience, and target role to identify what’s holding you back."
-      },
-      {
-        step: "03",
-        title: "Practice & Improve",
-        desc: "Go through mock interviews, structured answers, and real feedback to boost your performance."
-      }
-    ].map((item, i) => (
+  {
+    step: "01",
+
+    title:
+      language === "en"
+        ? "Book Your Session"
+        : "Booking Sesi Anda",
+
+    desc:
+      language === "en"
+        ? "Contact us via WhatsApp to secure your slot. Limited sessions available each week."
+        : "Hubungi kami melalui WhatsApp untuk mengamankan slot Anda. Slot terbatas setiap minggu."
+  },
+
+  {
+    step: "02",
+
+    title:
+      language === "en"
+        ? "Get Personalized Strategy"
+        : "Dapatkan Strategi Personal",
+
+    desc:
+      language === "en"
+        ? "We review your CV, experience, and target role to identify what’s holding you back."
+        : "Kami mereview CV, pengalaman, dan target posisi Anda untuk mengetahui apa yang menghambat Anda."
+  },
+
+  {
+    step: "03",
+
+    title:
+      language === "en"
+        ? "Practice & Improve"
+        : "Latihan & Tingkatkan",
+
+    desc:
+      language === "en"
+        ? "Go through mock interviews, structured answers, and real feedback to boost your performance."
+        : "Lakukan mock interview, latihan jawaban terstruktur, dan dapatkan feedback nyata untuk meningkatkan performa Anda."
+  }
+].map((item, i) => (
+      
       <div
         key={i}
         style={{
@@ -754,31 +821,78 @@ onMouseLeave={(e) => {
 
   {/* ITEM */}
   {[
-    {
-      title: "Clarity on What Interviewers Want",
-      desc: "Understand how hiring managers evaluate candidates and what makes them select or reject."
-    },
-    {
-      title: "Structured Answer Framework",
-      desc: "Learn how to answer questions clearly, professionally, and with strong impact."
-    },
-    {
-      title: "Realistic Mock Interview",
-      desc: "Practice in a real interview simulation so you’re fully prepared for the actual situation."
-    },
-    {
-      title: "Personalized Feedback",
-      desc: "Get direct, actionable feedback on what to improve and how to fix it immediately."
-    },
-    {
-      title: "Confidence & Communication Upgrade",
-      desc: "Improve how you speak, present yourself, and handle pressure during interviews."
-    },
-    {
-      title: "Real Interview Readiness",
-      desc: "Walk into interviews with clarity, confidence, and a much higher chance of success."
-    }
-  ].map((item, i) => (
+  {
+    title:
+      language === "en"
+        ? "Clarity on What Interviewers Want"
+        : "Memahami Apa yang Dicari Interviewer",
+
+    desc:
+      language === "en"
+        ? "Understand how hiring managers evaluate candidates and what makes them select or reject."
+        : "Pahami bagaimana hiring manager menilai kandidat dan alasan kandidat diterima atau ditolak."
+  },
+
+  {
+    title:
+      language === "en"
+        ? "Structured Answer Framework"
+        : "Framework Jawaban Terstruktur",
+
+    desc:
+      language === "en"
+        ? "Learn how to answer questions clearly, professionally, and with strong impact."
+        : "Pelajari cara menjawab pertanyaan secara jelas, profesional, dan impactful."
+  },
+
+  {
+    title:
+      language === "en"
+        ? "Realistic Mock Interview"
+        : "Mock Interview Realistis",
+
+    desc:
+      language === "en"
+        ? "Practice in a real interview simulation so you’re fully prepared for the actual situation."
+        : "Latihan interview dengan simulasi nyata agar lebih siap menghadapi interview sesungguhnya."
+  },
+
+  {
+    title:
+      language === "en"
+        ? "Personalized Feedback"
+        : "Feedback Personal",
+
+    desc:
+      language === "en"
+        ? "Get direct, actionable feedback on what to improve and how to fix it immediately."
+        : "Dapatkan feedback langsung dan actionable tentang apa yang harus diperbaiki."
+  },
+
+  {
+    title:
+      language === "en"
+        ? "Confidence & Communication Upgrade"
+        : "Upgrade Komunikasi & Confidence",
+
+    desc:
+      language === "en"
+        ? "Improve how you speak, present yourself, and handle pressure during interviews."
+        : "Tingkatkan cara berbicara, membangun kesan profesional, dan menghadapi tekanan interview."
+  },
+
+  {
+    title:
+      language === "en"
+        ? "Real Interview Readiness"
+        : "Kesiapan Interview Nyata",
+
+    desc:
+      language === "en"
+        ? "Walk into interviews with clarity, confidence, and a much higher chance of success."
+        : "Masuk interview dengan lebih jelas, percaya diri, dan peluang sukses yang jauh lebih tinggi."
+  }
+].map((item, i) => (
     <div
       key={i}
       style={{
@@ -824,25 +938,52 @@ onMouseLeave={(e) => {
     </div>
   </div>
    {/* SESSION DETAILS */}
+{/* SESSION DETAILS */}
 <div
   style={{
     marginTop: "20px",
-    marginBottom: "30px" ,
+    marginBottom: "30px",
     padding: "18px",
     borderRadius: "14px",
     background: "rgba(255,255,255,0.05)",
     border: "1px solid rgba(255,255,255,0.1)"
   }}
 >
-  <div style={{ fontWeight: 600, marginBottom: "10px" }}>
-    {text[language].session}
+  {/* TITLE */}
+  <div
+    style={{
+      fontWeight: 600,
+      marginBottom: "10px"
+    }}
+  >
+    {
+      language === "en"
+        ? "📌 Session Details"
+        : "📌 Detail Sesi"
+    }
   </div>
 
-  <div style={{ color: "#cbd5f5", lineHeight: "1.8", fontSize: "14px" }}>
-    • Each session is designed as a focused 60-minute deep-dive to maximize results.<br />
-    • Additional time can be arranged if needed (+IDR 100K per hour).<br />
-    • We recommend conducting the session in person at our office for maximum results.<br />
-    • Online sessions are also available via Google Meet or Microsoft Teams.
+  {/* CONTENT */}
+  <div
+    style={{
+      color: "#cbd5f5",
+      lineHeight: "1.8",
+      fontSize: "14px",
+      whiteSpace: "pre-line"
+    }}
+  >
+    {
+      language === "en"
+        ? `• Each session is designed as a focused 60-minute deep-dive to maximize results.
+• Additional time can be arranged if needed (+IDR 100K per hour).
+• We recommend conducting the session in person at our office for maximum results.
+• Online sessions are also available via Google Meet or Microsoft Teams.`
+
+        : `• Setiap sesi dirancang sebagai deep-dive fokus selama 60 menit untuk memaksimalkan hasil.
+• Tambahan waktu tersedia jika dibutuhkan (+IDR 100K per jam).
+• Kami merekomendasikan sesi dilakukan langsung di kantor kami untuk hasil terbaik.
+• Sesi online juga tersedia melalui Google Meet atau Microsoft Teams.`
+    }
   </div>
 </div>
 </div>
