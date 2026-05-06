@@ -416,29 +416,36 @@ useEffect(() => {
 
   {/* TITLE */}
   <h1
-    style={{
-      position: "relative",
-      zIndex: 1,
-      fontSize: isMobile ? "26px" : "48px",
-      fontWeight: 600,
-      letterSpacing: "-1px"
-    }}
-  >
-    Get Selected, Not Just Interviewed
-  </h1>
-
+  style={{
+    position: "relative",
+    zIndex: 1,
+    fontSize: isMobile ? "26px" : "48px",
+    fontWeight: 600,
+    letterSpacing: "-1px"
+  }}
+>
+  {
+    language === "en"
+      ? "Get Selected, Not Just Interviewed"
+      : "Dapatkan Pekerjaan, Bukan Sekadar Interview"
+  }
+</h1>
   {/* SUBTITLE */}
   <p
-    style={{
-      position: "relative",
-      zIndex: 1,
-      marginTop: "16px",
-      color: "#94a3b8",
-      fontSize: "18px"
-    }}
-  >
-    We help professionals pass HR screening and interviews using real hiring insights.
-  </p>
+  style={{
+    position: "relative",
+    zIndex: 1,
+    marginTop: "16px",
+    color: "#94a3b8",
+    fontSize: "18px"
+  }}
+>
+  {
+    language === "en"
+      ? "We help professionals pass HR screening and interviews using real hiring insights."
+      : "Kami membantu profesional lolos screening HR dan interview menggunakan insight nyata dari dunia rekrutmen."
+  }
+</p>
 
 </section>
 
@@ -498,12 +505,39 @@ useEffect(() => {
     {text[language].whyVDText}
   </p>
 
-  <ul style={{ lineHeight: "2", color: "#e2e8f0" }}>
-    <li>✅ 20+ years of Executive Search experience</li>
-    <li>✅ Direct insight into hiring decisions</li>
-    <li>✅ Proven strategies to get shortlisted</li>
-    <li>✅ Focused on real outcomes: interviews & offers</li>
-  </ul>
+ <ul style={{ lineHeight: "2", color: "#e2e8f0" }}>
+  <li>
+    {
+      language === "en"
+        ? "✅ 20+ years of Executive Search experience"
+        : "✅ Pengalaman Executive Search lebih dari 20 tahun"
+    }
+  </li>
+
+  <li>
+    {
+      language === "en"
+        ? "✅ Direct insight into hiring decisions"
+        : "✅ Insight langsung terhadap keputusan hiring"
+    }
+  </li>
+
+  <li>
+    {
+      language === "en"
+        ? "✅ Proven strategies to get shortlisted"
+        : "✅ Strategi terbukti untuk meningkatkan peluang shortlist"
+    }
+  </li>
+
+  <li>
+    {
+      language === "en"
+        ? "✅ Focused on real outcomes: interviews & offers"
+        : "✅ Fokus pada hasil nyata: interview & job offer"
+    }
+  </li>
+</ul>
 </div>
 {/* TESTIMONIALS */}
 <div id="cas-testimonials" style={{ marginBottom: "60px" }}>
@@ -990,12 +1024,26 @@ onMouseLeave={(e) => {
 
   {/* FEATURES */}
   {[
-    "CV Optimization",
-    "Interview Preparation",
-    "Mock Interview Session + Feedback",
-    "🎁 Get a free follow-up interview preparation session when you land your first interview",
-    "⏱ Optional extension: +IDR 100K / hour"
-  ].map((item, i) => (
+  language === "en"
+    ? "CV Optimization"
+    : "Optimasi CV",
+
+  language === "en"
+    ? "Interview Preparation"
+    : "Persiapan Interview",
+
+  language === "en"
+    ? "Mock Interview Session + Feedback"
+    : "Mock Interview + Feedback",
+
+  language === "en"
+    ? "🎁 Get a free follow-up interview preparation session when you land your first interview"
+    : "🎁 Dapatkan sesi persiapan interview gratis saat Anda mendapatkan panggilan interview pertama",
+
+  language === "en"
+    ? "⏱ Optional extension: +IDR 100K / hour"
+    : "⏱ Tambahan waktu opsional: +IDR 100K / jam"
+].map((item, i) => (
     <div
       key={i}
       style={{
