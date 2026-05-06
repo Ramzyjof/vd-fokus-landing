@@ -332,101 +332,101 @@ useEffect(() => {
     )
   }
   style={{
+    position: "relative",
     display: "flex",
     alignItems: "center",
-    gap: "10px",
-    padding: "6px 8px",
+    justifyContent:
+      language === "en"
+        ? "flex-start"
+        : "flex-end",
+    width: "110px",
+    height: "46px",
     borderRadius: "999px",
-    background: "rgba(255,255,255,0.06)",
+    background:
+      "rgba(255,255,255,0.08)",
     border:
       "1px solid rgba(255,255,255,0.12)",
     cursor: "pointer",
     transition: "all 0.3s ease",
-    position: "relative",
-    minWidth: "90px",
-    justifyContent:
-      language === "en"
-        ? "flex-start"
-        : "flex-end"
+    padding: "4px"
   }}
 >
-  {/* SWITCH BG */}
+  {/* SLIDER */}
   <div
     style={{
       position: "absolute",
-      width: "38px",
+      top: "4px",
+      left:
+        language === "en"
+          ? "4px"
+          : "calc(100% - 50px)",
+      width: "42px",
       height: "38px",
       borderRadius: "999px",
       background:
         "linear-gradient(135deg,#3B82F6,#7F1D1D)",
       transition: "all 0.3s ease",
-      left:
-        language === "en"
-          ? "6px"
-          : "calc(100% - 44px)"
+      boxShadow:
+        "0 4px 12px rgba(0,0,0,0.4)"
     }}
   />
 
-  {/* EN */}
+  {/* ENGLISH */}
   <div
     style={{
       position: "relative",
       zIndex: 2,
+      width: "50%",
       display: "flex",
+      justifyContent: "center",
       alignItems: "center",
       gap: "6px",
-      padding:
-        language === "en"
-          ? "0 10px 0 4px"
-          : "0"
+      color: "#fff",
+      fontWeight: 600,
+      fontSize: "13px"
     }}
   >
-    <span style={{ fontSize: "18px" }}>
-      🇺🇸
-    </span>
+    <img
+      src="https://flagcdn.com/w40/us.png"
+      alt="English"
+      style={{
+        width: "18px",
+        height: "18px",
+        borderRadius: "999px",
+        objectFit: "cover"
+      }}
+    />
 
-    {language === "en" && (
-      <span
-        style={{
-          fontSize: "12px",
-          fontWeight: 600,
-          color: "#fff"
-        }}
-      >
-        EN
-      </span>
-    )}
+    {language === "en" && "EN"}
   </div>
 
-  {/* ID */}
+  {/* INDONESIA */}
   <div
     style={{
       position: "relative",
       zIndex: 2,
+      width: "50%",
       display: "flex",
+      justifyContent: "center",
       alignItems: "center",
       gap: "6px",
-      padding:
-        language === "id"
-          ? "0 4px 0 10px"
-          : "0"
+      color: "#fff",
+      fontWeight: 600,
+      fontSize: "13px"
     }}
   >
-    {language === "id" && (
-      <span
-        style={{
-          fontSize: "12px",
-          fontWeight: 600,
-          color: "#fff"
-        }}
-      >
-        ID
-      </span>
-    )}
+    {language === "id" && "ID"}
 
-    <span style={{ fontSize: "18px" }}>
-      🇮🇩
-    </span>
+    <img
+      src="https://flagcdn.com/w40/id.png"
+      alt="Indonesia"
+      style={{
+        width: "18px",
+        height: "18px",
+        borderRadius: "999px",
+        objectFit: "cover"
+      }}
+    />
   </div>
 </div>
 </nav>
