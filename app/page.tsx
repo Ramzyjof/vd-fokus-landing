@@ -9,6 +9,7 @@ export default function Page() {
   const [showDetails, setShowDetails] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [language, setLanguage] = useState<"en" | "id">("en");
   const menuItems: { name: string; id: string }[] = [
   { name: "Home", id: "cas-hero" },
   { name: "Problem", id: "cas-problem" },
@@ -17,6 +18,183 @@ export default function Page() {
   { name: "Package", id: "cas-package" },
   { name: "Visit", id: "cas-visit" }
 ];
+const text = {
+  en: {
+    translate: "Bahasa Indonesia",
+
+    heroTitle:
+      "Get Selected, Not Just Interviewed",
+
+    heroSubtitle:
+      "We help professionals pass HR screening and interviews using real hiring insights.",
+
+    whyFail:
+      "Why You Keep Failing Interviews",
+
+    whyFailText:
+      "Most candidates don’t fail because they lack experience, they fail because they present it poorly.",
+
+    fail1:
+      "❌ No structured interview preparation",
+
+    fail2:
+      "❌ Lack of real feedback or practice",
+
+    fail3:
+      "❌ Weak communication & body language",
+
+    whyVD:
+      "Why VD Fokus?",
+
+    whyVDText:
+      "We know what hiring managers actually look for, because we’ve been on the other side.",
+
+    vd1:
+      "✅ 20+ years of Executive Search experience",
+
+    vd2:
+      "✅ Direct insight into hiring decisions",
+
+    vd3:
+      "✅ Proven strategies to get shortlisted",
+
+    vd4:
+      "✅ Focused on real outcomes: interviews & offers",
+
+    testimonials:
+      "What Professionals Say",
+
+    process:
+      "How It Works",
+
+    package:
+      "Career Acceleration Services Package",
+
+    packageText:
+      "Everything you need to get shortlisted, perform confidently, and secure job offers.",
+
+    launch:
+      "🚀 Launch Offer (Only 5 slots available)",
+
+    seeDetails:
+      "See Full Details",
+
+    hideDetails:
+      "Hide Details",
+
+    gain:
+      "What you will gain from this session:",
+
+    outcome:
+      "🎯 Final Outcome",
+
+    outcomeText:
+      "Higher chance of passing interviews and securing job offers.",
+
+    session:
+      "📌 Session Details",
+
+    book:
+      "Book via WhatsApp",
+
+    visit:
+      "Visit Us",
+
+    visitText:
+      "Come visit our office in West Java",
+
+    direction:
+      "Get Directions →"
+  },
+
+  id: {
+    translate: "English",
+
+    heroTitle:
+      "Dapatkan Pekerjaan, Bukan Sekadar Interview",
+
+    heroSubtitle:
+      "Kami membantu profesional lolos screening HR dan interview menggunakan insight nyata dari dunia rekrutmen.",
+
+    whyFail:
+      "Kenapa Anda Terus Gagal Interview",
+
+    whyFailText:
+      "Sebagian besar kandidat gagal bukan karena kurang pengalaman, tetapi karena tidak mampu menyampaikannya dengan baik.",
+
+    fail1:
+      "❌ Tidak memiliki persiapan interview yang terstruktur",
+
+    fail2:
+      "❌ Kurangnya feedback dan latihan nyata",
+
+    fail3:
+      "❌ Komunikasi dan body language yang lemah",
+
+    whyVD:
+      "Mengapa VD Fokus?",
+
+    whyVDText:
+      "Kami memahami apa yang sebenarnya dicari hiring manager karena kami pernah berada di posisi mereka.",
+
+    vd1:
+      "✅ Pengalaman Executive Search lebih dari 20 tahun",
+
+    vd2:
+      "✅ Insight langsung terhadap keputusan hiring",
+
+    vd3:
+      "✅ Strategi terbukti untuk meningkatkan peluang shortlist",
+
+    vd4:
+      "✅ Fokus pada hasil nyata: interview & job offer",
+
+    testimonials:
+      "Apa Kata Profesional",
+
+    process:
+      "Bagaimana Prosesnya",
+
+    package:
+      "Paket Career Acceleration Service",
+
+    packageText:
+      "Semua yang Anda butuhkan untuk meningkatkan peluang shortlist, tampil percaya diri, dan mendapatkan job offer.",
+
+    launch:
+      "🚀 Promo Launching (Hanya tersedia 5 slot)",
+
+    seeDetails:
+      "Lihat Detail Lengkap",
+
+    hideDetails:
+      "Sembunyikan Detail",
+
+    gain:
+      "Yang akan Anda dapatkan dari sesi ini:",
+
+    outcome:
+      "🎯 Hasil Akhir",
+
+    outcomeText:
+      "Peluang lebih tinggi untuk lolos interview dan mendapatkan job offer.",
+
+    session:
+      "📌 Detail Sesi",
+
+    book:
+      "Booking via WhatsApp",
+
+    visit:
+      "Kunjungi Kami",
+
+    visitText:
+      "Kunjungi kantor kami di Jawa Barat",
+
+    direction:
+      "Buka Google Maps →"
+  }
+};
 
 const scrollToSection = (id: string) => {
   const el = document.getElementById(id);
@@ -137,7 +315,29 @@ useEffect(() => {
           style={{ cursor: "pointer", color: "#94a3b8" }}
         >
           {item.name}
+          <button
+  onClick={() =>
+    setLanguage(
+      language === "en"
+        ? "id"
+        : "en"
+    )
+  }
+  style={{
+    padding: "8px 14px",
+    borderRadius: "999px",
+    border:
+      "1px solid rgba(255,255,255,0.15)",
+    background: "transparent",
+    color: "#fff",
+    cursor: "pointer",
+    fontSize: "13px"
+  }}
+>
+  {text[language].translate}
+</button>
         </span>
+        
       ))}
     </nav>
 
@@ -261,17 +461,17 @@ useEffect(() => {
         {/* WHY FAIL */}
         <div id="cas-problem" style={{ marginBottom: "50px" }}>
           <h2 style={{ fontSize: "22px", marginBottom: "12px", scrollMarginTop: "100px" }}>
-            Why You Keep Failing Interviews
+            {text[language].whyFail}
           </h2>
 
           <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
-            Most candidates don’t fail because they lack experience, they fail because they present it poorly.
+            {text[language].whyFailText}
           </p>
 
           <ul style={{ lineHeight: "2", color: "#e2e8f0" }}>
-            <li>❌ No structured interview preparation</li>
-            <li>❌ Lack of real feedback or practice</li>
-            <li>❌ Weak communication & body language</li>
+            <li>{text[language].fail1}</li>
+            <li>{text[language].fail2}</li>
+            <li>{text[language].fail3}</li>
           </ul>
         </div>
         
@@ -286,11 +486,11 @@ useEffect(() => {
   }}
 >
   <h2 style={{ fontSize: "22px", marginBottom: "12px" }}>
-    Why VD Fokus?
+    {text[language].whyVD}
   </h2>
 
   <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
-    We know what hiring managers actually look for, because we’ve been on the other side.
+    {text[language].whyVDText}
   </p>
 
   <ul style={{ lineHeight: "2", color: "#e2e8f0" }}>
@@ -303,7 +503,7 @@ useEffect(() => {
 {/* TESTIMONIALS */}
 <div id="cas-testimonials" style={{ marginBottom: "60px" }}>
   <h2 style={{ fontSize: "22px", marginBottom: "20px", scrollMarginTop: "100px" }}>
-    What Professionals Say
+    {text[language].testimonials}
   </h2>
 
   <div
@@ -367,7 +567,7 @@ onMouseLeave={(e) => {
   }}
 >
   <h2 style={{ fontSize: "24px", marginBottom: "30px" }}>
-    How It Works
+    {text[language].process}
   </h2>
 
   <div
@@ -478,11 +678,11 @@ onMouseLeave={(e) => {
 
 >
   <h2 style={{ fontSize: "22px", marginBottom: "10px" }}>
-    Career Acceleration Services Package
+    {text[language].package}
   </h2>
 
   <p style={{ color: "#94a3b8", marginBottom: "16px" }}>
-    Everything you need to get shortlisted, perform confidently, and secure job offers.
+    {text[language].packageText}
   </p>
 
   {/* PRICE */}
@@ -509,7 +709,7 @@ onMouseLeave={(e) => {
   </div>
 
   <p style={{ color: "#facc15", fontSize: "14px", marginBottom: "20px" }}>
-    🚀 Launch Offer (Only 5 slots available)
+    {text[language].launch}
   </p>
 
   <div
@@ -532,7 +732,11 @@ onMouseLeave={(e) => {
     transition: "all 0.3s ease"
   }}
 >
-  {showDetails ? "Hide Details" : "See Full Details"}
+  {
+  showDetails
+    ? text[language].hideDetails
+    : text[language].seeDetails
+}
 </button>
 <div
   style={{
@@ -545,7 +749,7 @@ onMouseLeave={(e) => {
 >
   {/* DROPDOWN DETAIL */}
   <p style={{ color: "#94a3b8", marginBottom: "20px" }}>
-    What you will gain from this session:
+    {text[language].gain}
   </p>
 
   {/* ITEM */}
@@ -613,10 +817,10 @@ onMouseLeave={(e) => {
     }}
   >
     <div style={{ fontWeight: 600, marginBottom: "6px" }}>
-      🎯 Final Outcome
+      {text[language].outcome}
     </div>
     <div style={{ color: "#bbf7d0" }}>
-      Higher chance of passing interviews and securing job offers.
+      {text[language].outcomeText}
     </div>
   </div>
    {/* SESSION DETAILS */}
@@ -631,7 +835,7 @@ onMouseLeave={(e) => {
   }}
 >
   <div style={{ fontWeight: 600, marginBottom: "10px" }}>
-    📌 Session Details
+    {text[language].session}
   </div>
 
   <div style={{ color: "#cbd5f5", lineHeight: "1.8", fontSize: "14px" }}>
@@ -721,7 +925,7 @@ textAlign: "center",
           color: "#e5e7eb"
         }}
       >
-        Visit Us
+        {text[language].visit}
       </h2>
     </div>
 
@@ -733,7 +937,7 @@ textAlign: "center",
         fontSize: "16px"
       }}
     >
-      Come visit our office in West Java
+      {text[language].visitText}
     </p>
 
     {/* LOGO (REPLACES COMPANY NAME) */}
@@ -793,7 +997,7 @@ textAlign: "center",
         (e.currentTarget.style.transform = "scale(1)")
       }
     >
-      Get Directions →
+      {text[language].direction}
     </a>
 
     {/* MAP */}
