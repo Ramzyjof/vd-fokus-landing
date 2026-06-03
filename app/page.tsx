@@ -1242,7 +1242,7 @@ textAlign: "center",
         lineHeight: "1.6"
       }}
     >
-      Jl. Raya Bogor KM 30, Cimanggis, Depok, West Java, Indonesia
+      City Walk 07, Citra Gran Jl. Alternatif Cibubur No.12, RT.005/RW.011, Jatikarya, Kec. Jatisampurna, Kota Bks, Jawa Barat 17435
     </p>
 
     {/* BUTTON */}
