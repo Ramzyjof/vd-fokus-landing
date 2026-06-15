@@ -74,7 +74,7 @@ const text = {
       "Everything you need to get shortlisted, perform confidently, and secure job offers.",
 
     launch:
-      "🚀 Launch Offer (Only 5 slots available)",
+      "🚀 This Week Offer (Only 5 slots available)",
 
     seeDetails:
       "See Full Details",
@@ -162,7 +162,7 @@ const text = {
       "Semua yang Anda butuhkan untuk meningkatkan peluang shortlist, tampil percaya diri, dan mendapatkan job offer.",
 
     launch:
-      "🚀 Promo Launching (Hanya tersedia 5 slot)",
+      "🚀 Promo Minggu ini (Hanya tersedia 5 slot)",
 
     seeDetails:
       "Lihat Detail Lengkap",
